@@ -1,0 +1,917 @@
+
+@font-face {
+font-family: myfont;
+src: url('Granjon.otf');
+}
+
+body {
+  background-color: #ffffff;
+margin: 0;
+padding: 0;
+font-family: myfont;
+}
+
+.navbar {
+background-color: #171717;
+padding: 1.3rem 1.1rem;
+border: none;
+animation: fadeInDown 0.5s ease-in-out;
+}
+
+.navbar-brand {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+font-weight: bold;
+font-size: 2rem;
+letter-spacing: 2px;
+}
+
+.navbar-brand:hover {
+color: #ffffff !important;
+}
+
+.icon-group {
+display: flex;
+gap: 2.5rem;
+margin-right: 20px;
+}
+
+.search-box {
+width: 350px;
+margin-left: 20px;
+border: 1px solid black;
+}
+
+.sidebar-search {
+display: none;
+padding: 1rem 1.5rem;
+}
+
+.navbar a,
+.navbar-brand,
+.nav-link,
+.input-group-text,
+.navbar i {
+color: rgb(255, 255, 255);
+}
+
+.input-group-text i {
+color: #000000;
+font-weight: 800;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+/* Hover effects */
+
+
+
+
+
+
+
+
+
+/* Carousel */
+.carousel-item::before {
+content: '';
+position: absolute;
+top: 0; left: 0; bottom: 0; right: 0;
+background: black;
+opacity: 0.4;
+}
+
+.carousel-caption-custom {
+position: absolute;
+top: 90%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+color: white;
+z-index: 10;
+text-shadow: 2px 2px 5px #000;
+}
+
+.carousel-caption-custom p {
+font-size: 2rem;
+font-weight: bold;
+}
+
+.carousel-video {
+width: 100%;
+height: 90vh;
+object-fit: cover;
+}
+
+/* Carousel 2 */
+#secondCarousel {
+max-width: 1200px;
+height: 700px;
+margin: 80px auto;
+position: relative;
+overflow: hidden;
+}
+
+#secondCarousel .carousel-item::before {
+content: '';
+position: absolute;
+inset: 0;
+background: rgba(0, 0, 0, 0.5);
+z-index: 5;
+}
+
+#secondCarousel .carousel-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+#secondCarousel .carousel-caption {
+position: absolute;
+top: 50% !important;
+left: 50% !important;
+transform: translate(-50%, -50%) !important;
+bottom: auto !important;
+right: auto !important;
+text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+z-index: 10;
+}
+
+/* Product Cards */
+.product-card {
+transition: all 0.4s ease;
+border: 1px solid black;
+}
+
+.product-card:hover {
+color: #000000;
+}
+
+.product-img {
+border-bottom: 1px solid black;
+}
+
+.product-card:hover .product-img {
+background: #ffffff;
+}
+
+.btn-add {
+font-weight: 700;
+border: 2px solid black;
+transition: background-color 0.4s ease;
+}
+
+.product-card:hover .btn-add {
+background-color: #ffffff;
+color: #000;
+border: 2px solid;
+font-weight: 700;
+transition: all .3s ease-in-out ;
+}
+
+.product-card:hover .btn-add:hover {
+background-color: #000;
+transform-origin: center;
+padding-left: 12px;
+padding-right: 12px;
+border-radius: 10px;
+color: #fff;
+}
+
+.product-info h5,
+.product-info p,
+.product-info span {
+color: #000;
+}
+
+.product-card:hover .product-info h5,
+.product-card:hover .product-info p,
+.product-card:hover .product-info span {
+color: #000000 !important;
+}
+
+/* Hero Section */
+.hero-image {
+background-image: url(p2.webp);
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 95vh;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+color: white;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+margin-top: 10px;
+}
+/* Heading */
+.hh {
+font-size: 1.7rem;
+font-weight: bolder;
+color: #000000;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+text-align: center;
+position: relative;
+display: inline-block;
+margin-top: 5rem;
+margin-bottom: 1rem;
+}
+
+.hh::after {
+content: '';
+position: absolute;
+width: 0%;
+height: 4px;
+bottom: 0;
+left: 0;
+background-color: rgb(0, 0, 0);
+transition: width 0.5s ease;
+}
+
+.hh:hover::after {
+width: 100%;
+}
+
+/* Loader */
+#loader {
+position: fixed;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+background: #000000;
+}
+
+.spinner img {
+width: 50px;
+height: 50px;
+animation: spin 1.6s linear infinite;
+border-radius: 99%;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+#main-content {
+opacity: 0;
+transition: opacity 0.5s ease;
+}
+
+#main-content.show {
+opacity: 1;
+}
+
+/* Button */
+#bt3 {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: 2px solid black;
+transition: all .3s ease;
+}
+
+#bt3:hover {
+  border: 2px solid black;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+.search-box { display: none !important; }
+.sidebar-search { display: block; }
+.sp { padding-right: 10%; }
+}
+
+@media (max-width: 768px) {
+.carousel-img { height: 50vh; }
+.hero-image { height: 60vh; }
+.hh {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+#ora{
+  display: none;
+}
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+.hh {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+.hero-image { height: 90vh; }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+.hh {
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+.hero-image { height: 110vh; }
+}
+@media (min-width : 400px) and(max-width:769px){
+  #ora{
+    display: none;
+  }
+}
+@media (min-width: 1201px) {
+.hh {
+  font-size: 2rem;
+  margin-top: 5rem;
+}
+.hero-image { height: 130vh; }
+}
+
+@media (max-width: 500px) {
+.navbar-brand {
+  font-size: 1.3rem;
+  padding-right: 40px;
+}
+.icon-group {
+  gap: 0.8rem;
+}
+#ora{
+  display: none;
+}
+}
+
+@media (max-width: 350px) {
+.navbar-brand {
+  font-size: 1rem;
+  padding-right: 50px;
+}
+.icon-group {
+  gap: 0.8rem;
+  margin-right: 0%;
+}
+#ora{
+  display: none;
+}
+}
+#loader1 {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; /* vertical stacking if needed */
+margin-top: 10px;
+font-weight: 200;
+color: #000000;
+}
+
+.hover-pop22{
+transition:  transform .5s;
+}
+.hover-pop22:hover{
+color: #ae0000 ;
+transform: scale(1.1);
+}
+.hover-pop23{
+transition:  transform .5s;
+}
+.hover-pop23:hover{
+color: #326ebd ;
+transform: scale(1.1);
+}
+.hover-pop24{
+transition:  transform .5s;
+}
+.hover-pop24:hover{
+color: #84ca23; 
+transform: scale(1.1);
+}
+.bg-brown {
+background-color:#171717 ;
+}
+.text-white-important {
+color: #ffffff !important;
+}
+
+.link-text {
+position: relative;
+display: inline-block;
+cursor: pointer;
+padding-top: 10px;
+}
+.pp{
+
+padding-left:20px;
+}
+
+.link-text::after {
+content: '';
+position: absolute;
+left: 0;
+bottom: -3px;
+width: 0%;
+height: 2px ;/* thickness of underline */
+background-color: #ffffff; /* solid color, not currentColor */
+transition: width 0.4s ease-in-out;
+}
+
+
+.nav-link:hover .link-text::after {
+width: 100%;
+}
+
+
+#menuOffcanvas {
+height: 100vh; /* Change this to your desired height */
+max-height: 100vh; /* Optional for scroll handling */
+overflow-y: auto; /* Enables scrolling if content overflows 
+*/border: 1px solid white;
+border-radius: 5px;
+background-color:#171717;
+font-weight: 300;
+}
+.cart-sidebar {
+position: fixed;
+right: -100%;
+top: 0;
+width: 300px;
+height: 100%;
+background: #fff;
+box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+transition: right 0.4s ease;
+z-index: 1050;
+padding: 20px;
+border: 3px solid  #592a15;
+border-radius: 10px;
+}
+
+.cart-sidebar.active {
+right: 0;
+}
+
+.cart-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-weight: bold;
+border-bottom: 2px solid  #592a15;
+}
+
+.cart-body {
+margin-top: 20px;
+}
+
+.cart-item {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.cart-item img {
+width: 100px;
+height: 120px;
+object-fit: cover;
+border-radius: 5px;
+}
+
+.item-info {
+flex: 1;
+}
+
+.quantity-controls {
+display: flex;
+align-items: center;
+gap: 10px;
+margin: 5px 0;
+}
+
+.quantity-controls button {
+background: #381c0e;
+color: white;
+border: none;
+padding: 2px 8px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.cart-footer {
+border-top : 2px solid  #592a15;
+padding-top: 10px;
+margin-top: 20px;
+}
+
+.cart-footer .btn {
+width: 100%;
+margin-top: 10px;
+background-color: #381c0e;
+color: white;
+border: none;
+padding: 10px;
+cursor: pointer;
+}
+
+.close-btn22 {
+background: transparent;
+border: 3px solid #381c0e;
+font-size: 15px;
+cursor: pointer;
+color:#381c0e;/* <-- Apna desired color daalein */
+font-weight: bold;
+transform: rotate(180deg);
+transition: transform .7s ;
+}
+.close-btn22:hover{
+transform: rotate(360deg);
+}
+
+.custom-select-arrow {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='12' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 294.1L96 134.1 134.1 96l121.9 121.9L378.1 96 416 134.1 256 294.1z'/%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 0.75rem center;
+background-size: 1rem;
+padding-right: 2rem; /* space for icon */
+cursor: pointer;
+}
+/* target the toast container */
+#itemAddedToast {
+/* override the green bg */
+background-color:  #000000 !important;
+/* override the white text color */
+color: #f4f1de !important;
+border: 2px solid white;
+}
+
+/* if you want to specifically style the body text */
+#itemAddedToast .toast-body {
+font-size: 1rem;
+font-weight: 500;
+/* e.g. make text a slightly different shade */
+color: #ffffff !important;
+
+}
+
+/* adjust the close button icon color if needed */
+#itemAddedToast .btn-close-white {
+filter: invert(1) sepia(1) saturate(5) hue-rotate(150deg);
+}
+@keyframes slideIn {
+from { transform: translate(50%,50%); opacity: 0; }
+to   { transform: translate(0,0);   opacity: 1; }
+}
+@keyframes slideOut {
+from { transform: translate(0,0);   opacity: 1; }
+to   { transform: translate(50%,50%); opacity: 0; }
+}
+
+#itemAddedToast.show {
+animation: slideIn 0.5s forwards;
+}
+#itemAddedToast.hiding {
+animation: slideOut 0.5s forwards;
+}
+.img-zoom-wrapper {
+width: 100%;
+height: 100vh;
+overflow: hidden;
+position: relative;
+margin: 0 auto;
+}
+
+.img-zoom {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center center;
+display: block;
+margin: 0 auto;
+transition: transform 0.5s ease,
+            filter  0.5s ease,
+            opacity 0.5s ease;
+}
+
+.img-zoom-wrapper:hover .img-zoom {
+transform: scale(1.05);
+filter: brightness(5%);
+}
+/* 1. Make sure each slide crops any overflow */
+#secondCarousel .carousel-item {
+  overflow: hidden;
+}
+
+/* 2. Prepare the image for smooth transform & filter changes */
+#secondCarousel .carousel-item img {
+  transition: transform 0.7s ease, filter 0.7s ease;
+  /* Ensure the image still fully covers its container */
+  width: 100%;
+  height: auto;
+}
+
+/* 3. On hover, zoom in slightly and reduce brightness */
+#secondCarousel .carousel-item:hover img {
+  transform: scale(1.07);
+  filter: brightness(0.8);
+}
+/* ensure dropdown stays inside offcanvas */
+/* 1) Make the dropdown “anchor” positioned */
+#menuOffcanvas .dropdown {
+  position: relative;
+  
+}
+
+/* 2) Position the menu absolutely, offset from the toggle */
+#menuOffcanvas .dropdown-menu {
+  position: absolute;   /* relative to the .dropdown */
+  top: 100%;            /* just below the toggle link */
+  left: 20px;           /* move it 20px to the right—tweak as needed */
+  float: none;
+  box-shadow: none;
+  margin-top: .25rem;
+
+}
+/* Change dropdown item hover background & text color */
+#menuOffcanvas .dropdown-menu .dropdown-item:hover {
+  background-color: #ffffff;  /* a lighter brown—tweak as you like */
+  color: #000000  !important ;
+        /* ensure the text stays legible */
+}
+#ora{
+  font-weight: bolder;
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+.fortwo{
+  display: flex;
+  justify-content: center;
+  background: 100vh;
+  background-color: #000;
+}
+
+.container2 {
+  display: flex;
+  width: 100%;
+  gap: 40px; /* Space between two columns */
+}
+
+.image-box {
+  width: 50%; /* Half of the page */
+}
+
+.image-box img {
+  width: 100%; /* Fill the half page */
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+.product-img-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.product-img-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.product-img-container .hover-img {
+  opacity: 0;
+}
+
+.product-card:hover .hover-img {
+  opacity: 1;
+}
+
+.product-card:hover .main-img {
+  opacity: 0;
+}
+.full-width-banner {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.full-width-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.full-width-banner {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.full-width-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.centered-btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ✅ This now triggers on button or image hover */
+.hover-trigger:hover .img-zoom {
+  transform: scale(1.05);
+  filter: brightness(85%);
+}
+
+/* Responsive for iPad-like sizes */
+@media (min-width: 740px) and (max-width: 980px) {
+  .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Button styling */
+#bt4 {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+
+#bt4:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
+#bt5 {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+
+#bt5:hover {
+  background-color:#171717;
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+@media (min-width:950px) and (max-width:1150px) {
+  #bt5{
+    padding: 5px;
+    margin-left: 0px;
+    text-transform: lowercase;
+    font-weight: 300;
+  }
+}/* Footer Base */
+    /* Footer Base */
+    .footer {
+      background-color: #171717;
+      color: #e0e0e0;
+      padding: 30px 0;
+      font-family: sans-serif;
+      font-size: 14px;
+      margin-top: 100px;
+    }
+
+    /* Section containers */
+    .footer .footer-segment {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .footer .footer-segment > * {
+      margin: 0 0.5rem;
+    }
+
+    /* Primary links */
+    .footer-nav a {
+      color: inherit;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      padding: 0.25rem 0;
+      position: relative;
+    }
+    .footer-nav a:hover {
+      color: #fff;
+    }
+    /* optional underline on hover */
+    .footer-nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+    .footer-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Vertical Divider */
+    .footer-divider {
+      width: 1px;
+      height: 44px;
+      background-color: rgba(255,255,255,0.5);
+      margin: 0 0.5rem;
+    }
+    
+    /* Small screens: make it horizontal */
+    @media (max-width: 767px) {
+      .footer-divider {
+        /* switch dimensions */
+        width: 50%;
+        height: 1px;
+        /* give some vertical space */
+        margin:1rem 0;
+      }
+    }
+
+    /* Social links */
+    .footer-social a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 0 0.5rem;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: #fff;
+    }
+
+    /* Logo wrappers */
+    .footer-logos .logo-wrapper {
+      width: 36px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.5rem;
+    }
+    .footer-logos img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: grayscale(100%) brightness(85%);
+      transition: filter 0.3s ease;
+     
+    }
+    .footer-logos img:hover {
+      filter: none;
+    }
+/* Base social icon */
+.footer-social .social-icon {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+
+}
+
+/* Per-icon hover */
+.footer-social .social-icon.fb:hover       { color: #1DA1F2; transform: scale(1.1); }
+.footer-social .social-icon.twitter:hover  { color: #1DA1F2; transform: scale(1.1);} /* Twitter blue */
+.footer-social .social-icon.linkedin:hover { color: #0A66C2;transform: scale(1.1); } /* LinkedIn blue */
+.footer-social .social-icon.insta:hover    { color: #FCAF45;transform: scale(1.1); } /* Instagram yellow/orange */
+.footer-social .social-icon.github:hover   { color: #2aaa23; transform: scale(1.1); }
