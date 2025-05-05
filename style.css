@@ -938,3 +938,14 @@ video {
   min-height: 100%;
   object-fit: cover;
 }
+.hh2 {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: #000000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  }
