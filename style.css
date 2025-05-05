@@ -264,7 +264,7 @@ border-radius: 99%;
 
 #main-content {
 opacity: 0;
-transition: opacity 0.5s ease;
+transition: opacity 1s ease;
 }
 
 #main-content.show {
@@ -906,7 +906,6 @@ filter: brightness(5%);
   font-size: 1.2rem;
   margin: 0 0.5rem;
   transition: all 0.3s ease;
-
 }
 
 /* Per-icon hover */
@@ -915,3 +914,27 @@ filter: brightness(5%);
 .footer-social .social-icon.linkedin:hover { color: #0A66C2;transform: scale(1.1); } /* LinkedIn blue */
 .footer-social .social-icon.insta:hover    { color: #FCAF45;transform: scale(1.1); } /* Instagram yellow/orange */
 .footer-social .social-icon.github:hover   { color: #2aaa23; transform: scale(1.1); }
+
+
+@media (max-width: 600px) {
+  .hh34 {
+    font-size: 8vw;
+    margin-top: 150px;
+  }
+}
+
+.video-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
