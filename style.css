@@ -445,12 +445,12 @@ right: -100%;
 top: 0;
 width: 300px;
 height: 100%;
-background: #fff;
+background: #000000;
 box-shadow: -2px 0 5px rgba(0,0,0,0.5);
 transition: right 0.4s ease;
 z-index: 1050;
 padding: 20px;
-border: 3px solid  #592a15;
+border: 2px solid  #ffffff;
 border-radius: 10px;
 }
 
@@ -463,7 +463,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 font-weight: bold;
-border-bottom: 2px solid  #592a15;
+border-bottom: 2px solid  #ffffff;
 }
 
 .cart-body {
@@ -496,8 +496,8 @@ margin: 5px 0;
 }
 
 .quantity-controls button {
-background: #381c0e;
-color: white;
+background: #ffffff;
+color: rgb(0, 0, 0);
 border: none;
 padding: 2px 8px;
 font-size: 16px;
@@ -506,7 +506,7 @@ border-radius: 4px;
 }
 
 .cart-footer {
-border-top : 2px solid  #592a15;
+border-top : 2px solid  #ffffff;
 padding-top: 10px;
 margin-top: 20px;
 }
@@ -514,8 +514,8 @@ margin-top: 20px;
 .cart-footer .btn {
 width: 100%;
 margin-top: 10px;
-background-color: #381c0e;
-color: white;
+background-color: #ffffff;
+color: rgb(0, 0, 0);
 border: none;
 padding: 10px;
 cursor: pointer;
@@ -523,10 +523,10 @@ cursor: pointer;
 
 .close-btn22 {
 background: transparent;
-border: 3px solid #381c0e;
+border: 3px solid #ffffff;
 font-size: 15px;
 cursor: pointer;
-color:#381c0e;/* <-- Apna desired color daalein */
+color:#ffffff;/* <-- Apna desired color daalein */
 font-weight: bold;
 transform: rotate(180deg);
 transition: transform .7s ;
@@ -534,18 +534,20 @@ transition: transform .7s ;
 .close-btn22:hover{
 transform: rotate(360deg);
 }
-
 .custom-select-arrow {
-appearance: none;
--webkit-appearance: none;
--moz-appearance: none;
-background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='12' viewBox='0 0 512 512' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 294.1L96 134.1 134.1 96l121.9 121.9L378.1 96 416 134.1 256 294.1z'/%3E%3C/svg%3E");
-background-repeat: no-repeat;
-background-position: right 0.75rem center;
-background-size: 1rem;
-padding-right: 2rem; /* space for icon */
-cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 512 512' fill='%23000000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M256 294.1L96 134.1 134.1 96l121.9 121.9L378.1 96 416 134.1 256 294.1z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
+  cursor: pointer;
 }
+
+
 /* target the toast container */
 #itemAddedToast {
 /* override the green bg */
