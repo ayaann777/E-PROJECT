@@ -957,4 +957,18 @@ video {
     height: 80vh;
     overflow: hidden;
     margin-top: 20px;
+    
   }
+  .banner-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .full-width-banner2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px; /* Optional spacing between items */
+    
+  }
+  
