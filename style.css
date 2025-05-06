@@ -1053,3 +1053,9 @@ filter: brightness(5%);
   height: 80vh;
   overflow: hidden;
 }
+@media (max-width: 968px) {
+  .full-width-banner2,
+  .full-width-banner3 {
+    width: 100%;
+    height: auto; /* ✅ Auto height for mobile responsiveness */
+  }}
