@@ -959,7 +959,7 @@ filter: brightness(5%);
     width: 100%;
     height: 80vh;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: 10px;
     
   }
   .banner-container2 {
@@ -1002,7 +1002,6 @@ filter: brightness(5%);
   .full-width-banner3 {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
     position: relative;
     height: 80vh;
     overflow: hidden;
