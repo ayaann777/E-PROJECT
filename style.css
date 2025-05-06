@@ -652,7 +652,7 @@ filter: brightness(5%);
 }
 #ora{
   font-weight: bolder;
-  margin-top: 100px;
+  margin-top: 50px;
   text-align: center;
   margin-bottom: 0px;
 }
@@ -810,7 +810,7 @@ filter: brightness(5%);
       padding: 30px 0;
       font-family: sans-serif;
       font-size: 14px;
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
     /* Section containers */
@@ -818,6 +818,7 @@ filter: brightness(5%);
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .footer .footer-segment > * {
       margin: 0 0.5rem;
@@ -926,20 +927,22 @@ filter: brightness(5%);
 }
 
 .video-container {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
-
+  align-items: center;
+  height: 100vh; /* Full screen height */
+  background-color: rgb(255, 255, 255); /* Optional background */
+  overflow: hidden;
 }
 
-video {
-  min-width: 100%;
-  min-height: 100%;
+.video-container video {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
+
+  border-radius: 15px;
 }
+
 .hh2 {
   font-size: 1.7rem;
   font-weight: bolder;
@@ -956,7 +959,7 @@ video {
     width: 100%;
     height: 80vh;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 60px;
     
   }
   .banner-container2 {
@@ -971,4 +974,83 @@ video {
     padding: 10px; /* Optional spacing between items */
     
   }
+  .full-width-banner3 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px; /* Optional spacing between items */
+    
+  }
+  @media (max-width: 768px) {
+    .full-width-banner2 {
+      width: 100%;
+    }
+  }
+  .banner-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   
+  .full-width-banner2 {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+  }
+  .full-width-banner3 {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+  }
+  
+.img-zoom-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-zoom {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Button centering */
+
+/* RESPONSIVE FIX for mobile */
+@media (max-width: 968px) {
+  .full-width-banner2 {
+    width: 100%;
+    height: 80vh; /* optionally reduce height on small devices */
+  }
+}
+.bt14 {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: 2px solid black;
+  transition: all 0.3s ease;
+}
+
+.bt14:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
+.full-width-banner4 {
+  width: 90%;
+  box-sizing: border-box;
+  padding: 10px;
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
