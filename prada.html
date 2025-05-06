@@ -248,54 +248,52 @@
 
 
 
-
-<!-- Cart Sidebar -->
-<div id="cartSidebar" class="cart-sidebar">
-  <div class="cart-header">
-    <button class="close-btn22" onclick="toggleCart()" style="color: #000;">➔</button>
-    <h4 style="margin-right: 75px; margin-top: 20px;">Your Cart</h4>
-  </div>
-  <div class="cart-body">
-    <div class="cart-item">
-      <img src="new1.avif" alt="Product" >
-      <div class="item-info">
-        <p style="font-weight: bolder;">Louis Vuitton Capucines</p>
-        <div class="quantity-controls">
-          <button onclick="decreaseQty()" style="font-weight: 900;">-</button>
-          <span id="qty" style="font-weight: 500;">1</span>
-          <button onclick="increaseQty()" style="font-weight: bold;">+</button>
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <button class="close-btn22" onclick="toggleCart()" style="color: #fffafa;">➔</button>
+        <h4 style="margin-right: 75px; margin-top: 20px; color: #fff;">Your Cart</h4>
+      </div>
+      <div class="cart-body">
+        <div class="cart-item">
+          <img src="new1.avif" alt="Product" >
+          <div class="item-info">
+            <p style="font-weight: bolder; color: #fff;" >Louis Vuitton Capucines</p>
+            <div class="quantity-controls">
+              <button onclick="decreaseQty()" style="font-weight: 900;">-</button>
+              <span id="qty" style="font-weight: 500;">1</span>
+              <button onclick="increaseQty()" style="font-weight: bold;">+</button>
+            </div>
+            <p  style=" color: #fff;">$<span id="price" style="color: #fff;">5500</span></p>
+          </div>
         </div>
-        <p  style="font-weight: bold;">$<span id="price" style="font-weight: bold;">5500</span></p>
-      </div>
-    </div>
-    <div class="cart-footer" style="font-weight: bold;">
-      <p>Total : $<span id="total">5500</span></p>
-      <button class="btn view-cart">View Cart</button>
-      <button class="btn checkout">Checkout</button>
-      <button class="btn continue" onclick="toggleCart()">Continue Shopping</button>
-  
-      <div style="position: relative; display: inline-block; width: 100%; justify-content: center;">
-        <label for="country" style="margin-top: 30px; margin-left: 20%;">Choose your country:</label>
-        <select id="country" name="country" class="form-select text-center custom-select-arrow" style="background-color: #381c0e; color: #fff;">
-          <option value="">-- Select Country --</option>
-          <option value="PA">Pakistan</option>
-          <option value="US">United States</option>
-          <option value="IN">India</option>
-          <option value="GB">United Kingdom</option>
-          <option value="CA">Canada</option>
-          <option value="AU">Australia</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
-          <option value="JP">Japan</option>
-          <option value="CN">China</option>
-          <option value="BR">Brazil</option>
-        </select>
-      </div>
+        <div class="cart-footer" style=" color: #fff;">
+          <p>Total : $<span id="total">5500</span></p>
+          <button class="btn view-cart">View Cart</button>
+          <button class="btn checkout">Checkout</button>
+          <button class="btn continue" onclick="toggleCart()">Continue Shopping</button>
       
-
+          <div style="position: relative; display: inline-block; width: 100%; justify-content: center;">
+            <label for="country" style="margin-top: 30px; margin-left: 20%;">Choose your country:</label>
+            <select id="country" name="country" class="form-select text-center custom-select-arrow" style="background-color: #ffffff; color: #000000;">
+              <option value="">-- Select Country --</option>
+              <option value="PA">Pakistan</option>
+              <option value="US">United States</option>
+              <option value="IN">India</option>
+              <option value="GB">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="JP">Japan</option>
+              <option value="CN">China</option>
+              <option value="BR">Brazil</option>
+            </select>
+          </div>
+          
+    
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 <!-- Trigger Button -->
 
