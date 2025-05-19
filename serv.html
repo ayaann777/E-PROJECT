@@ -1,76 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>- BagBag -</title>
   <link rel="icon" href="jama.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-    }
+  <!-- Bootstrap CSS & JS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-    .service-card {
-      border: none;
-      border-radius: 20px;
-      transition: transform 0.8s ease, box-shadow 0.8s ease;
-      background: white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .icon-box {
-      font-size: 40px;
-      color: #fff;
-      background: #000000;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
 </head>
+<style>
+ .fullwidth-video {
+  display: block;            /* Treat each video as a block */
+  width: 80vw;               /* Keep your chosen width */
+  height: 80vh;              /* Keep your chosen height */
+  object-fit: cover;         /* Covers the container without distortion */
+  margin: 200px auto 0 auto; /* 200px top-margin, auto left/right to center */
+  border-radius: 15px;
+}
 
+@media (max-width: 768px) {
+  .fullwidth-video {
+    width: 100vw;            /* On small screens, make it truly full width */
+    height: 80vh;            /* As before */
+    margin: 200px 0 0 0;     /* Remove left/right auto to avoid horizontal scroll */
+  }
+}
+
+body {
+  overflow-x: hidden;        /* Hide any accidental horizontal overflow */
+}
+.cort {
+  width: 80vw;              /* match your video width */
+  margin: 20px auto;        /* vertical spacing + auto horizontal centering */
+  text-align: center;       /* center the text */
+}
+
+@media (max-width: 768px) {
+  .cort {
+    width: 100vw;           /* full-width on mobile to match videos */
+    margin: 20px 0;         /* remove side margins on small screens */
+  }
+}
+</style>
 <body>
+  <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
+
+<div id="loader">
+  <div class="spinner">
+    <img src="www.jpg" alt="Loading logo">
+  </div>
+</div>
+
+<div id="main-content" style="display: none;">
+  
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      
+      <!-- Sidebar Toggle Button -->
+        <div class="d-flex align-items-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
+          <span class="navbar-toggler-icon chimp"></span>
+        </button>
+        <form class="d-flex search-box d-none d-md-flex" role="search">
+          <div class="input-group input-group-sm">
+            <span class="input-group-text" ><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+          </div>
+        </form>
+      </div>
+  
+      <!-- Centered Brand -->
+      <a class="navbar-brand" href="index.html"><img src="logo-removebg-preview (1).png" alt="" height="50px" width="50px"></a>
+  
+      <!-- Right Icons -->
+      <div class="icon-group">
+        <a href="#" class="hover-pop22" title="Wishlist"><i class="fas fa-heart hover-pop22"></i></a>
+        <a href="#" class="hover-pop23" title="Sign In"><i class="fas fa-user hover-pop23"></i></a>
+        <a href="javascript:void(0);" class="hover-pop24" title="Cart" onclick="toggleCart()">
+          <i class="fas fa-shopping-cart hover-pop24"></i>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar Offcanvas -->
+ <div class="offcanvas offcanvas-start bg-brown text-white-important"
+     tabindex="-1"
+     id="menuOffcanvas"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false">
+
+    <div class="offcanvas-header text-center">
+      <h5 class="offcanvas-title text-center text-align" style="margin-left: 40%; margin-top: 5%;">Menu</h5>
+      <button type="button" class="btn-close btn-close-white tiger" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form class="sidebar-search mb-3 d-block d-md-none">
+        <div class="input-group input-group-sm">
+          <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
+          <input type="text" class="form-control" placeholder="Search...">
+        </div>
+      </form>
+      <ul class="navbar-nav">
+        <li class="nav-item animate-home">
+          <a href="index.html" class="nav-link text-white hover-products pp"><i class="fas fa-home me-2"></i><span class="link-text">Home</span></a>
+        </li>
+        <li class="nav-item dropdown animate-products">
+          <a 
+            class="nav-link dropdown-toggle text-white hover-products pp d-flex align-items-center" 
+            href="#" 
+            id="productsDropdown" 
+            role="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false"
+          >
+            <i class="fas fa-shopping-bag me-2"></i>
+            <span class="link-text">Products</span>
+          </a>
+          <ul class="dropdown-menu bg-brown border-0 bg-black" aria-labelledby="productsDropdown">
+            <li>    <a class="dropdown-item text-white d-flex align-items-center " href="prada.html"  style="text-decoration: 2px solid underline;">
+              PRADA
+            </a></li>
+            <li><a class="dropdown-item text-white" href="chanel.html">CHANEL</a></li>
+            <li><a class="dropdown-item text-white" href="lv.html">LOUIS VUITTON</a></li>
+            <li><a class="dropdown-item text-white" href="#section4">BOTTEGA VENETA</a></li>
+            <li><a class="dropdown-item text-white" href="#section5">HERMES PARIS</a></li>
+          </ul>
+        </li>
+        
+        <li class="nav-item animate-men">
+          <a class="nav-link text-white hover-men pp" href="pradamen.html"><i class="fas fa-male me-2"></i><span class="link-text" style="text-decoration: 2px solid underline;">Men's Section</span></a>
+        </li>
+        <li class="nav-item animate-women">
+          <a class="nav-link text-white hover-women pp" href="pradawomen.html"><i class="fas fa-female me-2"></i><span class="link-text">Women's Section</span></a>
+        </li>
+        <li class="nav-item animate-about">
+          <a class="nav-link text-white hover-home pp" href="#"><i class="fas fa-info-circle me-2"></i><span class="link-text">About</span></a>
+        </li>
+        <li class="nav-item animate-services">
+          <a class="nav-link text-white hover-home pp" href="#"><i class="fas fa-concierge-bell me-2"></i><span class="link-text">Services</span></a>
+        </li>
+        <li class="nav-item animate-contact">
+          <a class="nav-link text-white hover-home pp" href="#"><i class="fas fa-envelope me-2"></i><span class="link-text">Contact</span></a>
+        </li>
+      </ul>
+      
+      
+      
+    </div>
+  </div>
  
+<video class="fullwidth-video" src="trap - Trim.mp4" autoplay muted loop playsinline></video>
+  <div id="loader1">
+      <p class="hh34 hh" style="margin-top: 20px;">Gift Packaging Available </p>
+    </div>
+    <p class="text-center cort" style="font-size: 25px;">Make your purchase truly special with our elegant gift packaging service. Whether it’s for a birthday, anniversary, or just because — we offer beautifully wrapped bags with the option to include a personalized message, ready to delight your loved ones.</p>
+<video class="fullwidth-video" src="woman.webm" autoplay muted loop playsinline style="margin-top: 50px;"></video>
+  <div id="loader1">
+      <p class="hh34 hh" style="margin-top: 20px;">Handcrafted / Unique Designs </p>
+    </div>
+     <p class="text-center cort" style="font-size: 25px;">
+    Our bags are meticulously handcrafted by skilled artisans, ensuring each piece reflects exceptional quality and care. With unique designs that blend classic elegance and modern flair, every bag stands out as a true original. Experience the artistry and individuality woven into every stitch, making your accessory truly one-of-a-kind.</p>
+<video class="fullwidth-video" src="shave.mp4" autoplay muted loop playsinline style="margin-top: 50px;"></video>
+  <div id="loader1">
+      <p class="hh34 hh" style="margin-top: 20px;"> Eco-friendly Packaging </p>
+    </div>
+    <p class="text-center cort" style="font-size: 25px;">
+We are committed to protecting the planet by using sustainable, eco-friendly packaging materials for all our products. Our packaging is designed to minimize waste and reduce environmental impact without compromising on style or protection. By choosing us, you’re supporting a greener future, one beautifully wrapped bag at a time.</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
-  <script>
-    // Fade-in on scroll
-    const cards = document.querySelectorAll('.fade-in');
+   
+    <div id="cartSidebar" class="cart-sidebar">
+      <div class="cart-header">
+        <button class="close-btn22" onclick="toggleCart()" style="color: #fffafa;">➔</button>
+        <h4 style="margin-right: 75px; margin-top: 20px; color: #fff;">Your Cart</h4>
+      </div>
+      <div class="cart-body">
+        <div class="cart-item">
+          <img src="new1.avif" alt="Product" >
+          <div class="item-info">
+            <p style="font-weight: bolder; color: #fff;" >Louis Vuitton Capucines</p>
+            <div class="quantity-controls">
+              <button onclick="decreaseQty()" style="font-weight: 900;">-</button>
+              <span id="qty" style="font-weight: 500; color: #ffffff;">1</span>
+              <button onclick="increaseQty()" style="font-weight: bold;">+</button>
+            </div>
+            <p  style=" color: #fff;">$<span id="price" style="color: #fff;">5500</span></p>
+          </div>
+        </div>
+        <div class="cart-footer" style=" color: #fff;">
+          <p>Total : $<span id="total">5500</span></p>
+          <button class="btn view-cart">View Cart</button>
+          <button class="btn checkout">Checkout</button>
+          <button class="btn continue" onclick="toggleCart()">Continue Shopping</button>
+      
+          <div style="position: relative; display: inline-block; width: 100%; justify-content: center;">
+            <label for="country" style="margin-top: 30px; margin-left: 20%;">Choose your country:</label>
+            <select id="country" name="country" class="form-select text-center custom-select-arrow" style="background-color: #ffffff; color: #000000;">
+              <option value="">-- Select Country --</option>
+              <option value="PA">Pakistan</option>
+              <option value="US">United States</option>
+              <option value="IN">India</option>
+              <option value="GB">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="JP">Japan</option>
+              <option value="CN">China</option>
+              <option value="BR">Brazil</option>
+            </select>
+          </div>
+          
+    
+        </div>
+      </div>
+    </div>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
+<!-- Trigger Button -->
 
-    cards.forEach(card => observer.observe(card));
-  </script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+      <!-- 1) Primary Nav Links -->
+      <div class="footer-segment footer-nav text-center text-md-start mb-3 mb-md-0 d-flex gap-4">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Service</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider mx-2"></div>
+
+      <!-- 2) Social Media Handles -->
+      <div class="footer-segment footer-logos d-flex gap-4">
+        <a href="prada.html" class="logo-wrapper" aria-label="Brand 1"><img src="prada-fashion-white-logo-hd-png-701751694773734yaaj1ubzl3-removebg-preview (1).png" alt="Logo 1"></a>
+        <a href="chanel.html" class="logo-wrapper" aria-label="Brand 2"><img src="lets-removebg-preview.png" alt="Logo 2"></a>
+        <a href="lv.html" class="logo-wrapper" aria-label="Brand 3"><img src="yyyy-removebg-preview.png" alt="Logo 3"></a>
+        <a href="#" class="logo-wrapper" aria-label="Brand 4"><img src="bv.png" alt="Logo 4"></a>
+        <a href="#" class="logo-wrapper" aria-label="Brand 5"><img src="lolo-removebg-preview.png" alt="Logo 5"></a>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider mx-2"></div>
+
+      <!-- 3) Five Logos -->
+     <!-- 3) Five Logos (now with links) -->
+
+<div class="footer-segment footer-social d-flex gap-4">
+  <a href="#" class="social-icon fb"    aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+  <a href="#" class="social-icon insta"   aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+  <a href="#" class="social-icon twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="#" class="social-icon github"  aria-label="GitHub"><i class="bi bi-github"></i></a>
+  <a href="#" class="social-icon linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+</div>
+    </div>
+  </div>
+</footer>
+</div>
+  </div>
+    </div>
+<!-- Bootstrap JS + Icons (for social icons) -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- Item Added Toast -->
+<div id="itemAddedToast" class="toast position-fixed bottom-0 end-0 m-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 9999; display: none;">
+  <div class="d-flex">
+    <div class="toast-body">
+      ✅ Great choice ! Item added.
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="hideToast()" aria-label="Close"></button>
+  </div>
+</div>
+<!-- JAVA SCRIPT -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+<script src="script.js"></script>
+<!-- JAVA SCRIPT -->
 </body>
-
 </html>
