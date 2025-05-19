@@ -50,16 +50,7 @@ function toggleCart() {
 }
 
 // Detect clicks outside the sidebar
-document.addEventListener('click', function(event) {
-  const sidebar = document.getElementById('cartSidebar');
-  const cartButton = document.querySelector('.fa-shopping-cart');
-  const isClickInsideSidebar = sidebar.contains(event.target);
-  const isCartIcon = cartButton.contains(event.target);
 
-  if (!isClickInsideSidebar && !isCartIcon && sidebar.classList.contains('active')) {
-    sidebar.classList.remove('active');
-  }
-});
 function showToast() {
   const toast = document.getElementById('itemAddedToast');
   toast.style.display = 'block';
