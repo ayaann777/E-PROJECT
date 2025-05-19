@@ -36,6 +36,7 @@
     overflow: hidden;
     border-radius: 20px;
     border: 3px solid #171717;
+    width: 90vw;
   }
 
   .carousel-inner img {
@@ -47,25 +48,47 @@
   }
  
   .ad-card {
-      transition: transform 0.5s;
+      transition: all 0.5s ease;
       border: 1px solid black;
       background-color: #171717;
       color: #fffafa;
       margin-bottom: 10px;
+      font-weight: bold;
     }
     .ad-card:hover {
       transform: scale(1.03);
+       background-color: #ffffff;
+      color: #000000;
+            font-weight: bold;
+    }
+    .ad-card:hover .small {
+  color: #000000;
+        font-weight: bold;
+    }
+    h6{
+      font-weight: bold;
     }
     .ad-icon {
       font-size: 2.5rem;
       background-color: whitesmoke;
       }
       .card{
-        transition: transform 0.5s;
-        
+       transition: all .5s ease;
+    
+      }
+      .card:hover .nom {
+     
+        color: #000000;
+      }
+      .card:hover .nom2 {
+     
+        color: #000000;
       }
       .card:hover {
         transform:scale(1.05) ;
+        background-color: #fff;
+        color: #000000;
+        border: 2px solid black;
       }
        .hover-effect {
     transition: transform 0.5s ease, filter 0.3s ease;
@@ -128,7 +151,7 @@
 }
 /* Responsive map wrapper */
 .map-container {
-  width: 100%;
+  width: 80%;
   height: 65vh;            /* 70% of viewport height */
   max-width: 100vw;        /* never exceed the viewport width */
   overflow: hidden;
@@ -155,6 +178,23 @@
 .ff22{
   background-color: #171717;
   color: #fff;
+}
+.nom{
+  color: #fff;
+}
+.nom2{
+  color: #fff;
+}.card{
+  border: 2px solid white;
+}
+.card:hover{
+  border: 2px solid rgb(0, 0, 0);
+}
+.card:hover .card-img-top{
+   border-bottom: 3px solid rgb(0, 0, 0);
+}
+.card-img-top{
+  border-bottom: 3px solid white;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -269,6 +309,7 @@
  <div id="smallCarousel" class="carousel slide" data-bs-ride="carousel">
 
       <!-- Slides -->
+       <div class="d-flex justify-content-center">
       <div class="carousel-inner rounded shadow">
         <div class="carousel-item active">
           <img src="saal.png" class="d-block w-100" alt="Louis Vuitton Capucines">
@@ -301,6 +342,7 @@
 
       
 </div>
+      </div>
       </div>
        <p id="ora" >X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
                     ____________________________________________ X</p>
@@ -351,7 +393,7 @@
         <div class="video text-center">
           
           <video width="1100" height="560"  autoplay muted loop poster="poster.jpg" style="border: 3px solid black; object-fit: cover;">
-            <source src="vdo2.mp4" type="video/mp4" >
+            <source src="trap - Trim.mp4" type="video/mp4" >
           </video>
           
         </div>
@@ -364,7 +406,7 @@
       
       <!-- Image Section -->
       <div class="col-12 col-lg-6 col-xl-5">
-        <img class="img-fluid rounded hover-effect" loading="lazy" src="pradaformen.jpg" alt="About Us Image">
+        <img class="img-fluid rounded" src="mine.avif" alt="About Us Image" style="border: 2px solid black; height: 600px; object-fit: cover;">
       </div>
       
       <!-- Text Section -->
@@ -425,13 +467,13 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
           <!-- Product Card 1 -->
           <div class="col">
-            <div class="card h-100 ff22 shadow-sm border-0">
+            <div class="card h-100 ff22 shadow-sm">
               <img src="aroro.jpeg" class="card-img-top" alt="Hermès">
               <div class="card-body text-center">
                      <div id="loader1">
-      <p class="hh"  style="color: #fffafa;">OUR VISION</p>
+      <p class="hh nom">OUR VISION</p>
     </div>
-                <p class="card-text"  style="color: #fffafa;">From sleek modernism to timeless elegance, we infuse every creation with a touch of
+                <p class="card-text nom2">From sleek modernism to timeless elegance, we infuse every creation with a touch of
                   our artistic ingenuity. As a design agency, great design can shape perceptions and inspire action.</p>
      
               </div>
@@ -439,13 +481,13 @@
           </div>
           <!-- Product Card 2 -->
           <div class="col">
-            <div class="card h-100 ff22 shadow-sm border-0">
+            <div class="card h-100 ff22 shadow-sm">
               <img src="koko.jpeg" class="card-img-top" alt="Louis Vuitton">
               <div class="card-body text-center">
                   <div id="loader1">
-      <p class="hh"  style="color: #fffafa;">OUR TEAM</p>
+      <p class="hh nom">OUR TEAM</p>
     </div>
-                <p class="card-text"  style="color: #fffafa;">With a team of visionary engineers, developers, and creative minds, we embark on a
+                <p class="card-text nom2">With a team of visionary engineers, developers, and creative minds, we embark on a
                   journey to transform complex challenges into ingenious technological solutions.</p>
                 
               </div>
@@ -454,13 +496,13 @@
 
           <!-- Product Card 3 -->
           <div class="col">
-            <div class="card h-100 ff22 shadow-sm border-0">
+            <div class="card h-100 ff22 shadow-sm">
               <img src="better.jpeg" class="card-img-top" alt="Prada">
               <div class="card-body text-center">
                  <div id="loader1">
-      <p class="hh" style="color: #fffafa;">OUR VALUES</p>
+      <p class="hh nom" >OUR VALUES</p>
     </div>
-                <p class="card-text" style="color: #fff;"> Welcome to oWe are a team of dedicated designers, strategists, and visionaries
+                <p class="card-text nom2"> Welcome to oWe are a team of dedicated designers, strategists, and visionaries
                   with a passion for transforming ideas into captivating visuals of our values.</p>
                
               </div>
@@ -474,13 +516,14 @@
   <div id="loader1">
       <p class="hh" style="margin-top: 20px;">OUR STORE</p>
     </div>
+    <div class="d-flex justify-content-center">
 <div class="map-container">
   <iframe
    src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d231063.85224459806!2d55.2097321!3d25.1906511!3m2!1i1024!2i768!4f13.1!2m1!1sgucci%20store%20in%20dubai!5e0!3m2!1sen!2s!4v1747607907664!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 
   </iframe>
 </div>
-
+</div>
 
 <!-- Cart Sidebar -->
 <div id="cartSidebar" class="cart-sidebar">
