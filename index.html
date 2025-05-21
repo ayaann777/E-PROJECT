@@ -13,6 +13,10 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+<style>
+
+
+</style>
 <body>
   <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
 
@@ -118,50 +122,78 @@
   
 
   <!-- CAROUSEL -->
-  <div id="fullCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 80px;">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <video class="carousel-video" autoplay muted loop playsinline>
-          <source src="prada.mp4" type="video/mp4">
-      
-        </video>
-        <div class="carousel-caption-custom">
-            <a href="prada.html" id="bt3" class="btn">Shop Prada</a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video" autoplay muted loop playsinline>
-          <source src="chanel.mp4" type="video/mp4">
-        </video>
-        <div class="carousel-caption-custom">
-          <a href="chanel.html" id="bt3" class="btn">Shop Chanel</a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video" autoplay muted loop playsinline>
-          <source src="daj2.mp4" type="video/mp4">
-        </video>
-        <div class="carousel-caption-custom">
-          <a href="lv.html" id="bt3" class="btn">Shop Louiss Vuitton </a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <video class="carousel-video" autoplay muted loop playsinline>
-          <source src="bv34.mp4" type="video/mp4">
-        </video>
-        <div class="carousel-caption-custom">
-          <a href="lv.html" id="bt3" class="btn">Shop Bottega Veneta </a>
-        </div>
-      </div>
+  <div class="container-fluid px-0" style="margin-top: 80px;">
+    <!-- Carousel starts here -->
+    <div class="carousel slide mt-4" id="demo" data-bs-ride="carousel">
 
+        <!-- Carousel indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+        </div>
+
+        <!-- Carousel inner -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <video class="d-block w-100" muted loop autoplay>
+                    <source src="prada.mp4" type="video/mp4"> 
+                </video>
+                <div class="carousel-caption">
+                    <a href="prada.html" id="bt3" class="btn">Shop Prada</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video class="d-block w-100" muted loop autoplay>
+                    <source src="chanel.mp4" type="video/mp4"> 
+                </video>
+                <div class="carousel-caption">
+                    <a href="chanel.html" id="bt3" class="btn">Shop Chanel</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video class="d-block w-100" muted loop autoplay>
+                    <source src="daj2.mp4" type="video/mp4"> 
+                </video>
+                <div class="carousel-caption">
+                    <a href="louis.html" id="bt3" class="btn">Shop Louis Vuitton</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video class="d-block w-100" muted loop autoplay>
+                    <source src="bv34.mp4" type="video/mp4"> 
+                </video>
+                <div class="carousel-caption">
+                    <a href="bv.html" id="bt3" class="btn"> Shop Bottega Veneta</a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <video class="d-block w-100" muted loop autoplay>
+                    <source src="cha.mp4" type="video/mp4"> 
+                </video>
+                <div class="carousel-caption">
+                    <a href="hermes.html" id="bt3" class="btn">Shop Hermès</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and Right buttons -->
+        <button type="button" class="carousel-control-prev" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button type="button" class="carousel-control-next" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#fullCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#fullCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
+</div>
+
+
  <p id="ora" style="height: px;">X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
                     ____________________________________________ X</p>
     <div id="loader1">

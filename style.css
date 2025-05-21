@@ -80,69 +80,6 @@ font-weight: 800;
 
 
 
-/* Carousel */
-.carousel-item::before {
-content: '';
-position: absolute;
-top: 0; left: 0; bottom: 0; right: 0;
-
-}
-
-.carousel-caption-custom {
-position: absolute;
-top: 90%;
-left: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
-color: white;
-z-index: 10;
-font-weight: bolder;
-}
-
-.carousel-caption-custom p {
-font-size: 2rem;
-font-weight: bold;
-}
-
-.carousel-video {
-width: 100%;
-height: 90vh;
-object-fit: cover;
-}
-
-/* Carousel 2 */
-#secondCarousel {
-max-width: 1200px;
-height: 700px;
-margin: 80px auto;
-position: relative;
-overflow: hidden;
-}
-
-#secondCarousel .carousel-item::before {
-content: '';
-position: absolute;
-inset: 0;
-background: rgba(0, 0, 0, 0.5);
-z-index: 5;
-}
-
-#secondCarousel .carousel-item img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-#secondCarousel .carousel-caption {
-position: absolute;
-top: 50% !important;
-left: 50% !important;
-transform: translate(-50%, -50%) !important;
-bottom: auto !important;
-right: auto !important;
-text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-z-index: 10;
-}
 
 /* Product Cards */
 .product-card {
@@ -1260,41 +1197,9 @@ transform: rotate(180deg);
 transition: all .4s ease;
 
 }
-/* Ensure carousel container scales fluidly */
-#fullCarousel {
-  width: 100%;
-  margin-top: 80px;
+@media (max-width : 450px)
+{
+  #bt3{
+    font-size: 10px;
+  }
 }
-
-/* Video fills its container and scales proportionally */
-.carousel-video {
-  width: 100%;
-  height: 100vh; /* Adjust based on how tall you want it */
-  object-fit: cover;
-  display: block;
-}
-
-/* Maintain responsiveness across screen sizes */
-.carousel-item {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-/* Optional: make sure carousel inner inherits height */
-.carousel-inner {
-  width: 100%;
-  height: 100%;
-}
-
-/* Caption stays positioned and scales on small screens */
-
-
-
-
-/* Remove default spacing for buttons inside carousel */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 100% 100%;
-}
-
