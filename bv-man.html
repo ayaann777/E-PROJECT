@@ -13,6 +13,70 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+<style>
+.hermes-btn {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 28px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #000;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.hermes-btn:hover {
+  background-color: #171717;
+  color: white;
+  border-color: white;
+}
+@media (max-width:800px){
+  .hermes-btn{
+    font-size: 10px;
+    top: 75%;
+  }
+}
+.image-wrapper {
+  display: inline-block;
+  overflow: hidden;
+ border: 2px solid black;
+}
+
+.img-hover-scale {
+  transition: transform 0.4s ease;
+  display: block;
+
+}
+
+.img-hover-scale:hover {
+  transform: scale(1.05);
+  
+}
+.image-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-hover-scale {
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.image-wrapper:hover .img-hover-scale {
+  transform: scale(1.05);
+}
+
+
+
+.image-wrapper .hermes-btn {
+  position: absolute;
+}
+</style>
 <body>
   <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
 
@@ -363,14 +427,16 @@
 
    <p id="ora">X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
                     ____________________________________________ X</p>
-    <div class="banner-container2">
-    <div class="full-width-banner full-width-banner4 hover-trigger">
-      <div class="img-zoom-wrapper"  style="border-radius: 15px;">
-        <img src="chata.jpg" alt="Product" class="img-zoom" style="border-radius: 15px;">
+     <div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-12 col-lg-8 text-center position-relative">
+      <div class="image-wrapper position-relative d-inline-block">
+        <img src="chata.jpg" alt="Hermès" class="img-fluid rounded shadow img-hover-scale" style="border: 2px solid black; border-radius: 10px;">
+        <a href="bv-woman.html" class="hermes-btn position-absolute" style="letter-spacing: 2px;">FOR HER</a> 
       </div>
-      <a href="bv-woman.html" id="bt4" class="btn px-4 py-2 centered-btn">Bags For Women</a>
     </div>
-    </div>
+  </div>
+</div>
     <div id="cartSidebar" class="cart-sidebar">
       <div class="cart-header">
         <button class="close-btn22" onclick="toggleCart()" style="color: #fffafa;">➔</button>
@@ -428,10 +494,9 @@
       <!-- 1) Primary Nav Links -->
       <div class="footer-segment footer-nav text-center text-md-start mb-3 mb-md-0 d-flex gap-4">
         <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
+        <a href="about us.html">About</a>
+        <a href="serv.html">Service</a>
+        <a href="contactus.html">Contact</a>
       </div>
 
       <!-- Divider -->
@@ -442,8 +507,8 @@
         <a href="prada.html" class="logo-wrapper" aria-label="Brand 1"><img src="prada-fashion-white-logo-hd-png-701751694773734yaaj1ubzl3-removebg-preview (1).png" alt="Logo 1"></a>
         <a href="chanel.html" class="logo-wrapper" aria-label="Brand 2"><img src="lets-removebg-preview.png" alt="Logo 2"></a>
         <a href="lv.html" class="logo-wrapper" aria-label="Brand 3"><img src="yyyy-removebg-preview.png" alt="Logo 3"></a>
-        <a href="#" class="logo-wrapper" aria-label="Brand 4"><img src="bv.png" alt="Logo 4"></a>
-        <a href="#" class="logo-wrapper" aria-label="Brand 5"><img src="lolo-removebg-preview.png" alt="Logo 5"></a>
+        <a href="bv.html" class="logo-wrapper" aria-label="Brand 4"><img src="bv.png" alt="Logo 4"></a>
+        <a href="hermes.html" class="logo-wrapper" aria-label="Brand 5"><img src="lolo-removebg-preview.png" alt="Logo 5"></a>
       </div>
 
       <!-- Divider -->
@@ -453,11 +518,11 @@
      <!-- 3) Five Logos (now with links) -->
 
 <div class="footer-segment footer-social d-flex gap-4">
-  <a href="#" class="social-icon fb"    aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-  <a href="#" class="social-icon insta"   aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-  <a href="#" class="social-icon twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-  <a href="#" class="social-icon github"  aria-label="GitHub"><i class="bi bi-github"></i></a>
-  <a href="#" class="social-icon linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+  <a href="https://m.facebook.com/" class="social-icon fb"    aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+  <a href="https://www.instagram.com/" class="social-icon insta"   aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+  <a href="https://twitter.com/" class="social-icon twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+  <a href="https://github.com/ayaann777" class="social-icon github"  aria-label="GitHub"><i class="bi bi-github"></i></a>
+  <a href="https://pk.linkedin.com/" class="social-icon linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
 </div>
     </div>
   </div>
