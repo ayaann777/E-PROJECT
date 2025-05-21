@@ -14,8 +14,8 @@
 
 </head>
 <style>
-*{
-  font-family: my font !important;
+.prada{
+  font-family:font2;
 }
 @font-face {
   font-family: font2 ;
@@ -52,7 +52,7 @@
 
 @media (max-width: 768px) {
   .video-wrapper {
-    height: 60vh;
+    height: 80vh;
   }
 }
 .video-btn {
@@ -63,7 +63,7 @@
   z-index: 3;
   padding: 10px 20px;
   background-color: rgba(255,255,255,0.8);
-  border: 2px solid white;
+  border: 2px solid rgb(0, 0, 0);
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
@@ -79,7 +79,6 @@
 }
 @media (max-width :500px){
   .video-btn {left: 50%; top: 80%;}
-
 }
 </style>
 <body>
@@ -100,7 +99,7 @@
       <!-- Sidebar Toggle Button -->
       <div class="d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
-          <span class="navbar-toggler-icon chimp "></span>
+          <span class="navbar-toggler-icon chimp"></span>
         </button>
         <form class="d-flex search-box d-none d-md-flex" role="search">
           <div class="input-group input-group-sm">
@@ -131,9 +130,10 @@
      id="menuOffcanvas"
      data-bs-backdrop="static"
      data-bs-keyboard="false">
+
     <div class="offcanvas-header text-center">
       <h5 class="offcanvas-title text-center text-align" style="margin-left: 40%; margin-top: 5%;">Menu</h5>
-      <button type="button" class="btn-close tiger btn-close-white" data-bs-dismiss="offcanvas"></button>
+      <button type="button" class="btn-close btn-close-white tiger" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
       <form class="sidebar-search mb-3 d-block d-md-none">
@@ -159,21 +159,21 @@
             <span class="link-text">Products</span>
           </a>
           <ul class="dropdown-menu bg-brown border-0 bg-black" aria-labelledby="productsDropdown">
-            <li>    <a class="dropdown-item text-white d-flex align-items-center " href="prada.html" style="text-decoration: 2px solid underline;">
+            <li>    <a class="dropdown-item text-white d-flex align-items-center " href="prada.html" style="text-decoration: 2px solid underline;" >
               PRADA
             </a></li>
             <li><a class="dropdown-item text-white" href="chanel.html">CHANEL</a></li>
             <li><a class="dropdown-item text-white" href="lv.html">LOUIS VUITTON</a></li>
-            <li><a class="dropdown-item text-white" href="bv.html">BOTTEGA VENETA</a></li>
+            <li><a class="dropdown-item text-white" href="bv.html" >BOTTEGA VENETA</a></li>
             <li><a class="dropdown-item text-white" href="#section5">HERMES PARIS</a></li>
           </ul>
         </li>
         
         <li class="nav-item animate-men">
-          <a class="nav-link text-white hover-men pp" href="pradamen.html"><i class="fas fa-male me-2"></i><span class="link-text">Men's Section</span></a>
+          <a class="nav-link text-white hover-men pp" href="bvmen.html"><i class="fas fa-male me-2"></i><span class="link-text">Men's Section</span></a>
         </li>
         <li class="nav-item animate-women">
-          <a class="nav-link text-white hover-women pp" href="pradawomen.html"><i class="fas fa-female me-2"></i><span class="link-text">Women's Section</span></a>
+          <a class="nav-link text-white hover-women pp" href="bvwomen.html"><i class="fas fa-female me-2"></i><span class="link-text">Women's Section</span></a>
         </li>
         <li class="nav-item animate-about">
           <a class="nav-link text-white hover-home pp" href="#"><i class="fas fa-info-circle me-2"></i><span class="link-text">About</span></a>
@@ -351,44 +351,27 @@
 
 <div class="container-fluid px-0">
   <div class="row g-0 position-relative goda">
-
-     <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-3" style="pointer-events: none;">
-  <h1 style="font-size: 4rem; letter-spacing: 2px; font-weight: 100; font-family: font2;">
-    PRADA
-  </h1>
-</div>
+    <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-3 " style="pointer-events: none;">
+      <h1 style="font-size: 4rem;  font-weight: 100; font-family: font2;" class="prada">PRADA</h1>
+    </div>
 
     <!-- Video 1 -->
     <div class="col-12 col-md-6">
       <div class="video-wrapper">
-        <video
-          class="w-100 h-100 video-hover lm10"
-          muted
-          loop
-          preload="metadata"
-          poster="mb.webp"
-          style="object-fit: cover;">
-          <source src="woman.webm" />
+        <video class="w-100 h-100 video-hover" muted loop preload="metadata" playsinline poster="mb.webp" style="object-fit: cover;">
+          <source src="repo3.mp4" type="video/mp4" />
         </video>
-        
-        <a class="video-btn btn" href="pradawomen.html"> FOR HER</a>
+        <a class="video-btn btn" href="pradawomen.html">FOR HER</a>
       </div>
     </div>
 
     <!-- Video 2 -->
     <div class="col-12 col-md-6">
       <div class="video-wrapper">
-        <video
-          class="w-100 h-100 video-hover lm11"
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="chacha.png"
-          style="object-fit: cover;">
+        <video class="w-100 h-100 video-hover" muted loop preload="metadata" playsinline poster="chacha.png" style="object-fit: cover;">
           <source src="ls.mp4" type="video/mp4" />
         </video>
-         <a class="video-btn btn" href="pradamen.html"> FOR HIM</a>
+        <a class="video-btn btn" href="pradamen.html">FOR HIM</a>
       </div>
     </div>
   </div>
@@ -396,14 +379,7 @@
 
 
 <!-- Hover Play/Pause Script -->
- <script>
-  document.querySelectorAll('.video-wrapper').forEach(wrapper => {
-    const video = wrapper.querySelector('video');
 
-    wrapper.addEventListener('mouseenter', () => video.play());
-    wrapper.addEventListener('mouseleave', () => video.pause());
-  });
-</script>
 
 
 
@@ -533,69 +509,6 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.j
 </script>
 <script src="script.js"></script>
 <!-- JAVA SCRIPT -->
-<script>
-  const videos = document.querySelectorAll('.video-hover');
-
-  // Pause all videos except the current one
-  function pauseOtherVideos(currentVideo) {
-    videos.forEach(video => {
-      if (video !== currentVideo) {
-        video.pause();
-        video.closest('.video-wrapper')?.classList.remove('playing');
-      }
-    });
-  }
-
-  // Scroll-based autoplay for small screens
-  function setupScrollPlay() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        const wrapper = video.closest('.video-wrapper');
-
-        if (entry.isIntersecting) {
-          pauseOtherVideos(video);
-          video.play();
-          wrapper?.classList.add('playing');
-        } else {
-          video.pause();
-          wrapper?.classList.remove('playing');
-        }
-      });
-    }, {
-      threshold: 0.5
-    });
-
-    videos.forEach(video => observer.observe(video));
-  }
-
-  // Hover-based autoplay for large screens
-  function setupHoverPlay() {
-    videos.forEach(video => {
-      const wrapper = video.closest('.video-wrapper');
-
-      if (wrapper) {
-        wrapper.addEventListener('mouseenter', () => {
-          pauseOtherVideos(video);
-          video.play();
-          wrapper.classList.add('playing');
-        });
-
-        wrapper.addEventListener('mouseleave', () => {
-          video.pause();
-          wrapper.classList.remove('playing');
-        });
-      }
-    });
-  }
-
-  // Apply logic based on screen size
-  if (window.innerWidth < 768) {
-    setupScrollPlay();
-  } else {
-    setupHoverPlay();
-  }
-</script>
 
 
 </body>

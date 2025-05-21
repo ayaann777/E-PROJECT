@@ -77,10 +77,15 @@
       flex: 1 1 250px;
       max-width: 400px;
     }
+    .details-section p {
+     font-size: 1.2rem;
+     text-align: center;
+    }
 
-    .price {
-      font-size: 1.5em;
+    .price1 {
+      font-size: 2.5em;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .dropdown {
@@ -398,13 +403,15 @@
  
   <h2>Product Name</h2>
 
-<div class="product-container" style="margin-top: 100px; margin-bottom: 200px;">
+<div class="product-container" style="margin-top: 100px; margin-bottom: 100px;">
   <div class="image-section">
     <img id="mainImage" class="main-image" src="eren.jpg" alt="Main Product Image">
   </div> 
 
   <div class="details-section">
-  <div class="price">Prada Saffiano Briefcase</div>
+  <div id="loader1">
+      <p class="hh hh2" style="font-size: 2rem;" >BAG BAG </p>
+    </div>
   <p><strong>Available Colors:</strong> Based on selected image</p>
 
   <!-- 1) Thumbnails immediately under Available Colors -->
@@ -423,7 +430,7 @@
 
   <!-- 2) Then the description toggle -->
   <div class="dropdown" id="descDropdown">
-    <button onclick="toggleDropdown()">Product Description ⌄</button>
+    <button onclick="toggleDropdown()" class="text-center" style="background-color: #000000; color: #ccc;">Product Description </button>
     <div class="dropdown-content">
       <p>This stylish bag is crafted with durable materials, designed for daily use and travel. Lightweight and spacious with modern aesthetic.</p>
     </div>

@@ -13,6 +13,81 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+<style>
+.prada{
+  font-family:font2;
+}
+@font-face {
+  font-family: font2 ;
+  src: url(engry.otf);
+}
+.video-wrapper {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-hover {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain; /* Optional: keeps full video in view */
+}
+
+
+.video-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  pointer-events: none;
+  transition: background 0.4s ease;
+}
+
+.video-wrapper:hover::before,
+.video-wrapper.playing::before {
+  background: rgba(0, 0, 0, 0.4); /* Lighter overlay when playing */
+}
+
+
+@media (max-width: 768px) {
+  .video-wrapper {
+    height: 80vh;
+  }
+}
+.video-btn {
+  position: absolute;
+  top: 90%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  padding: 10px 20px;
+  background-color: rgba(255,255,255,0.8);
+  border: 2px solid rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  border-radius: 10px;
+  
+}
+
+.video-btn:hover {
+  background-color: black;
+  color: white;
+   border: 2px solid white;
+}
+@media (max-width :500px){
+  .video-btn {left: 50%; top: 80%;}
+}
+</style>
 <body>
   <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
 
@@ -361,14 +436,19 @@
   </div>
    <p id="ora">X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
                     ____________________________________________ X</p>
-    <div class="banner-container2">
-      <div class="full-width-banner full-width-banner4 hover-trigger">
-        <div class="img-zoom-wrapper"  style="border-radius: 15px;">
-          <img src="chacha.png" alt="Product" class="img-zoom" style="border-radius: 15px;">
-        </div>
-        <a href="pradamen.html" id="bt4" class="btn px-4 py-2 centered-btn">Bags For Men</a>
+                   
+                    <div class="container-fluid px-0">
+  <div class="row g-0 position-relative goda">
+     <div class="col-12 col-md-6">
+      <div class="video-wrapper">
+        <video class="w-100 h-100 video-hover" muted loop preload="metadata" playsinline poster="chacha.png" style="object-fit: cover;">
+          <source src="ls.mp4" type="video/mp4" />
+        </video>
+        <a class="video-btn btn" href="pradamen.html">FOR HIM</a>
       </div>
-      </div>
+    </div>
+  </div>
+</div>
       <div id="cartSidebar" class="cart-sidebar">
         <div class="cart-header">
           <button class="close-btn22" onclick="toggleCart()" style="color: #fffafa;">➔</button>
