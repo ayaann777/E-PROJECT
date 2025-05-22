@@ -47,6 +47,7 @@
   object-fit: cover;
   border: 1px solid #ccc;
   border-radius: 10px;
+
 }
 
 .thumbnails img {
@@ -289,7 +290,17 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   z-index: 100;         /* above most other elements */
 }
-
+.city{
+  transition: all .5s ease;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 10px;
+  position: absolute;
+}
+.city:hover{
+  background-color: #000000;
+  color: #ddd;
+}
   </style>
 <body>
   <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
@@ -400,12 +411,16 @@
       
     </div>
   </div>
- 
-  <h2>Product Name</h2>
 
+
+
+  <h2>Product Name</h2>
+<a href="" class="btn city" aria-label="Close" style=" border: 1px solid black; font-weight: bolder;">
+  &times;
+</a>
 <div class="product-container" style="margin-top: 100px; margin-bottom: 100px;">
   <div class="image-section">
-    <img id="mainImage" class="main-image" src="eren.jpg" alt="Main Product Image">
+    <img id="mainImage" class="main-image" src="eren.jpg" alt="Main Product Image" style="border: 3px solid black;">
   </div> 
 
   <div class="details-section">

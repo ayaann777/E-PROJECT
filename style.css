@@ -1,6 +1,6 @@
 
   @font-face {
-    font-family: my font ;
+    font-family: my font !important;
     src: url(Granjon.otf);
   }
   *{
