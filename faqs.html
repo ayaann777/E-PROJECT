@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Bags FAQ</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+  /* Global Styles */
+  body {
+ 
+    background-image: url('ajeeb.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    padding: 0%;
+
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .faq-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toggle-icon {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    display: none;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  .faq-answer.show {
+    display: block;
+    opacity: 1;
+    max-height: 300px; /* Max height for the transition effect */
+  }
+  
+  .faq-answer p {
+    margin: 0;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    .faq-item {
+      padding: 10px 0;
+    }
+  
+    .faq-question {
+      font-size: 16px;
+    }
+  }
+</style>  
+</head>
+<body>
+  <section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <div class="faq-question" id="question1">
+        <span>What makes your bags different from others on the market?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer1">
+        <p>Our bags are crafted with meticulous attention to detail using the finest materials, offering both elegance and durability. Each bag is a statement of superior craftsmanship.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" id="question2">
+        <span>How long will it take to receive my order?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer2">
+        <p>We offer expedited shipping for a seamless experience. Orders typically ship within 1-2 business days and will arrive at your doorstep in 3-5 days, depending on your location.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" id="question3">
+        <span>Can I personalize my bag?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer3">
+        <p>Absolutely! We offer a variety of customization options, including engraving your initials, custom hardware, and bespoke color combinations. Let us create a one-of-a-kind piece just for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" id="question4">
+        <span>Are your bags sustainable?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer4">
+        <p>Yes, we prioritize sustainability by using ethically sourced materials and eco-friendly packaging. We are continuously working towards minimizing our environmental impact.</p>
+      </div>
+    </div>
+
+  </section>
+<script>// Get all the FAQ question elements
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  const toggleIcon = item.querySelector('.toggle-icon');
+
+  // Add click event to each question
+  question.addEventListener('click', () => {
+    // Accordion-style behavior (only one FAQ answer is shown at a time)
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.querySelector('.faq-answer').classList.remove('show');
+        otherItem.querySelector('.toggle-icon').textContent = '+';
+      }
+    });
+
+    // Toggle the current answer visibility and icon
+    answer.classList.toggle('show');
+    toggleIcon.textContent = answer.classList.contains('show') ? '-' : '+';
+  });
+});</script>
+  <script src="script.js"></script>
+</body>
+</html>

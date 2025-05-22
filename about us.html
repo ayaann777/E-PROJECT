@@ -209,6 +209,7 @@
 .custom-img-container {
   height: 550px; /* Yahan apni desired height daalein */
 }
+
 </style>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <body>
@@ -319,10 +320,10 @@
     </div>
     
 
-<div class="container">
+  <div class="container-fluid px-0" style="margin-top: 80px;">
   <!-- Carousel starts here -->
   <div class="carousel slide mt-4" id="demo" data-bs-ride="carousel" style="border: 2px solid black;">
-    
+
     <!-- Carousel indicators -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -331,28 +332,54 @@
     </div>
 
     <!-- Carousel inner -->
-    <div class="carousel-inner fixed-height-carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1: Video -->
       <div class="carousel-item active" data-bs-interval="3000">
-        <img src="saal.png" class="d-block w-100 carousel-image" alt="Slide 1">
-        <div class="carousel-caption">
-          <h1>This is my slide 1</h1>
+        <!-- Wrap in a ratio container -->
+        <div class="ratio ratio-16x9">
+           <img src="saal.png" class="d-block w-100 h-100" alt="Chanel" style="object-fit: cover;" />
         </div>
       </div>
 
+      <!-- Slide 2: Image -->
       <div class="carousel-item">
-        <img src="he.png" class="d-block w-100 carousel-image" alt="Slide 2">
-        <div class="carousel-caption">
-          <h1>This is my slide 2</h1>
+        <!-- Wrap in a ratio container -->
+        <div class="ratio ratio-16x9">
+          <img src="he.png" class="d-block w-100 h-100" alt="Chanel" style="object-fit: cover;" />
         </div>
       </div>
 
+      <!-- Slide 3: Image -->
       <div class="carousel-item">
-        <img src="it yes.png" class="d-block w-100 carousel-image" alt="Slide 3">
+        <!-- Wrap in a ratio container -->
+        <div class="ratio ratio-16x9">
+          <img src="it yes.png" class="d-block w-100 h-100" alt="Hermès" style="object-fit: cover;" />
+        </div>
         <div class="carousel-caption">
-          <h1>This is my slide 3</h1>
+          <a href="about us.html" id="bt3" class="btn">Learn More</a>
         </div>
       </div>
+
     </div>
+
+    <!-- Left and Right buttons -->
+    <button
+      type="button"
+      class="carousel-control-prev"
+      data-bs-target="#demo"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button
+      type="button"
+      class="carousel-control-next"
+      data-bs-target="#demo"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon"></span>
+    </button>
   </div>
 </div>
 
@@ -401,7 +428,7 @@
         </div>
     <div class="container my-4">
   <div class="ratio ratio-16x9 border border-dark">
-    <video autoplay muted loop poster="poster.jpg" style="object-fit: cover; width: 100%; height: 100%;">
+    <video autoplay muted loop poster="jhinga.avif" style="object-fit: cover; width: 100%; height: 100%;">
       <source src="trap - Trim.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>

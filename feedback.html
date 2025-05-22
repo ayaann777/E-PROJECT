@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Feedback Form Container */
+        .feedback-form {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .feedback-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input Fields */
+        label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input:focus, textarea:focus {
+            border-color: black;
+            outline: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .star {
+            width: 50px;
+            height: 50px;
+            fill: #ccc;
+            transition: fill 0.3s;
+        }
+
+        .star:hover, .star:hover ~ .star {
+            fill: #FFD700 !important;
+        }
+
+        /* Submit Button */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 16px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: grey;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .star {
+                width: 24px;
+                height: 24px;
+            }
+
+            .feedback-form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <form id="feedbackForm" class="feedback-form">
+        <h2>How was your unboxing experience?</h2>
+
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+        <div class="error" id="nameError"></div>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error" id="emailError"></div>
+
+        <label for="comment">Comment *</label>
+        <textarea id="comment" name="comment" rows="5" required></textarea>
+        <div class="error" id="commentError"></div>
+
+        <div class="star-rating" id="starRating">
+            <svg class="star" data-value="1" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.2 4.9 1.5 7.1L12 17.8 5.7 21.5 7.2 14.4 2 9.5l7.1-.6L12 2z"/></svg>
+            <svg class="star" data-value="2" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.2 4.9 1.5 7.1L12 17.8 5.7 21.5 7.2 14.4 2 9.5l7.1-.6L12 2z"/></svg>
+            <svg class="star" data-value="3" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.2 4.9 1.5 7.1L12 17.8 5.7 21.5 7.2 14.4 2 9.5l7.1-.6L12 2z"/></svg>
+            <svg class="star" data-value="4" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.2 4.9 1.5 7.1L12 17.8 5.7 21.5 7.2 14.4 2 9.5l7.1-.6L12 2z"/></svg>
+            <svg class="star" data-value="5" viewBox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.2 4.9 1.5 7.1L12 17.8 5.7 21.5 7.2 14.4 2 9.5l7.1-.6L12 2z"/></svg>
+        </div>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <script>
+        const nameInput = document.getElementById('name');
+        const nameError = document.getElementById('nameError');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const commentInput = document.getElementById('comment');
+        const commentError = document.getElementById('commentError');
+        const form = document.getElementById('feedbackForm');
+
+        // Validate Name (only letters and spaces)
+        nameInput.addEventListener('input', () => {
+            const nameRegex = /^[A-Za-z\s]+$/;
+            if (!nameRegex.test(nameInput.value)) {
+                nameError.textContent = "Only alphabets and spaces are allowed in the name.";
+            } else {
+                nameError.textContent = "";
+            }
+        });
+
+        // Validate Email (standard email format)
+        emailInput.addEventListener('input', () => {
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(emailInput.value)) {
+                emailError.textContent = "Please enter a valid email address.";
+            } else {
+                emailError.textContent = "";
+            }
+        });
+
+        // Validate Comment (non-empty)
+        commentInput.addEventListener('input', () => {
+            if (commentInput.value.trim() === "") {
+                commentError.textContent = "Comment cannot be empty.";
+            } else {
+                commentError.textContent = "";
+            }
+        });
+
+        form.addEventListener('submit', function (e) {
+            let valid = true;
+
+            // Validate Name
+            const nameRegex = /^[A-Za-z\s]+$/;
+            if (!nameRegex.test(nameInput.value)) {
+                e.preventDefault();
+                nameError.textContent = "Please enter a valid name (letters and spaces only).";
+                valid = false;
+            }
+
+            // Validate Email
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(emailInput.value)) {
+                e.preventDefault();
+                emailError.textContent = "Please enter a valid email address.";
+                valid = false;
+            }
+
+            // Validate Comment
+            if (commentInput.value.trim() === "") {
+                e.preventDefault();
+                commentError.textContent = "Comment cannot be empty.";
+                valid = false;
+            }
+
+            if (!valid) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

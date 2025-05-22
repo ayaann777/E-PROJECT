@@ -1203,3 +1203,127 @@ transition: all .4s ease;
     font-size: 10px;
   }
 }
+ /* Sitemap Section Styling */
+.sitemap {
+  background-color: #171717;
+}
+
+.sitemap h5 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.sitemap-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+.sitemap-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.sitemap-links a:hover {
+  color: #ffffff;
+}
+.sitemap-links {
+  color: #ffffff;
+  text-align: center;
+}
+
+.sitemap-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Divider */
+.sitemap-divider {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255,255,255,0.3);
+}
+
+/* Responsive divider (turn horizontal on small screens) */
+@media (max-width: 767px) {
+  .sitemap-divider {
+    width: 50%;
+    height: 1px;
+    margin: 1rem auto;
+  }
+}
+.sitemap {
+  background-color: #171717;
+  text-align: center;
+}
+
+.sitemap h5 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+@media (max-width:500px){
+  
+.sitemap h5 {
+font-size: 15px;
+}
+.sitemap-links a {
+ font-size: 12px;
+ 
+}}
+.sitemap-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding: 0.25rem 0;
+  text-align: center;
+  transition: color 0.2s;
+}
+
+.sitemap-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.sitemap-links a:hover {
+  color: #ffffff;
+}
+
+.sitemap-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Constrain max width */
+.sitemap .container {
+  max-width: 1140px; /* or 960px depending on your preference */
+}
+
+/* Optional spacing improvements */
+@media (max-width: 767px) {
+  .sitemap {
+    text-align: center;
+  }
+}
