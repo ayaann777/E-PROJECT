@@ -1327,3 +1327,6 @@ font-size: 15px;
     text-align: center;
   }
 }
+.city{
+  transform: rotate(180deg);
+}
