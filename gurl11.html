@@ -14,39 +14,320 @@
 
 </head>
 <style>
- .fullwidth-video {
-  display: block;            /* Treat each video as a block */
-  width: 80vw;               /* Keep your chosen width */
-  height: 80vh;              /* Keep your chosen height */
-  object-fit: cover;         /* Covers the container without distortion */
-  margin: 200px auto 0 auto; /* 200px top-margin, auto left/right to center */
-  border-radius: 15px;
+
+    * {
+      box-sizing: border-box;
+      font-family: my font;
+    }
+
+
+
+    h2 {
+      text-align: center;
+    }
+
+  .product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 140px; /* Adds space between image and details */
+  justify-content: start; /* Align left without centering */
+  align-items: flex-start;
+  margin: 0; /* Removes default outer margins */
+  padding-left: 0px; /* Prevents padding from pushing image */
+}
+
+
+    .image-section {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+.main-image {
+  width: 100%;
+  height: 400px; /* fixed height for uniformity */
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border 0.3s;
+}
+
+.thumbnails img.active {
+  border-color: #333;
 }
 
 @media (max-width: 768px) {
-  .fullwidth-video {
-    width: 100vw;            /* On small screens, make it truly full width */
-    height: 80vh;            /* As before */
-    margin: 200px 0 0 0;     /* Remove left/right auto to avoid horizontal scroll */
+  .main-image {
+    height: 300px;
+  }
+
+  .thumbnails img {
+    width: 60px;
+    height: 60px;
+  }}
+
+    .details-section {
+      flex: 1 1 250px;
+      max-width: 400px;
+    }
+    .details-section p {
+     font-size: 1.2rem;
+     text-align: center;
+    }
+
+    .price1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .shroud {
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .dropdown button {
+      background-color: #f2f2f2;
+      padding: 12px 15px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-top: none;
+      background-color: #fafafa;
+      border-radius: 0 0 5px 5px;
+    }
+
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .image-section, .details-section {
+        max-width: 100%;
+      }
+
+      .thumbnails img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    @media (max-width: 600px) {
+  .product-container,
+
+
+  .image-section,
+  .details-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-container,
+  
+  .image-section,
+  .details-section {
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
+    
+  }
+
+  .details-section,
+  .image-section {
+    width: 100%;
+  }
+
+  .thumbnails {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .dropdown-content {
+    text-align: left;
   }
 }
-
-body {
-  overflow-x: hidden;        /* Hide any accidental horizontal overflow */
+.main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
-.cort {
-  width: 80vw;              /* match your video width */
-  margin: 20px auto;        /* vertical spacing + auto horizontal centering */
-  text-align: center;       /* center the text */
+
+/* Responsive fix for mobile (<=600px) */
+@media (max-width: 900px) {
+  .main-image {
+    height: 300px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .image-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.thumbnails img.active {
+  border-color: #333;
 }
 
 @media (max-width: 768px) {
-  .cort {
-    width: 100vw;           /* full-width on mobile to match videos */
-    margin: 20px 0;         /* remove side margins on small screens */
+  .main-image {
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .thumbnails img {
+    width: 70px;
+    height: 70px;
   }
 }
-</style>
+
+@media (max-width: 480px) {
+  .thumbnails {
+    justify-content: center;
+  }
+
+  .thumbnails img {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* On screens ≥992px (Bootstrap’s “lg” breakpoint), give the image section a 200px left margin */
+@media (min-width: 892px) {
+  .image-section {
+    margin-left: 100px;
+  }
+}
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;    /* stack image & details vertically */
+    align-items: center;
+    gap: 30px !important;      /* cut down the huge 140px gap */
+    margin-top: 50px;          /* you can tweak this too */
+    padding: 0 15px;           /* give a little side padding */
+  }
+  .details-section {
+    max-width: 100%;           /* let it fill the width */
+    text-align: center;        /* optional, for centering text */
+  }
+}
+/* 1) Make the dropdown container positioned */
+.dropdown {
+  position: relative;   /* establish a containing block for the absolute panel */
+}
+
+/* 2) Pull the panel out of document flow and overlay it */
+.dropdown-content {
+  position: absolute;   /* remove from normal flow */
+  top: 100%;            /* sit directly below the button */
+  left: 0;
+  width: 100%;          /* full width of the dropdown */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 100;         /* above most other elements */
+}
+.city{
+  transition: all 1s ease;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 10px;
+   font-size: 20px;
+  position: absolute;
+  height: 40px;
+background-color: #ffffff;
+  color: #000000;
+  border: 2px solid black;
+}
+.city:hover{
+background-color: #000000;
+  color: #ffffff;
+    border: 2px solid black;
+}
+@media (max-width : 620px ){
+  .image-section{
+    margin-top: 100px;
+  }
+  .city{
+    top: 15%;
+    left: 2%;
+  }
+}
+@media (max-width : 920px ){
+  .image-section{
+    margin-top: 150px;
+  }
+  .city{
+    top: 15%;
+    left: 2%;
+  }
+}
+@media (max-width : 420px ){
+  .image-section{
+    margin-top: 40px;
+  }
+  .city{
+    top: 15%;
+    left: 2%;
+  }
+}
+  </style>
 <body>
   <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
 
@@ -63,7 +344,7 @@ body {
     <div class="container-fluid d-flex align-items-center justify-content-between">
       
       <!-- Sidebar Toggle Button -->
-        <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
           <span class="navbar-toggler-icon chimp"></span>
         </button>
@@ -78,7 +359,6 @@ body {
       <!-- Centered Brand -->
       <a class="navbar-brand" href="index.html"><img src="logo-removebg-preview (1).png" alt="" height="50px" width="50px"></a>
   
-      <!-- Right Icons -->
       <!-- Right Icons -->
        <div class="icon-group">
         <a href="wish.html" class="hover-pop22" title="Wishlist"><i class="fas fa-heart hover-pop22"></i></a>
@@ -136,10 +416,10 @@ body {
           </ul>
         </li>
         <li class="nav-item animate-about">
-          <a class="nav-link text-white hover-home pp" href="about us.html"><i class="fas fa-info-circle me-2"></i><span class="link-text"  >About</span></a>
+          <a class="nav-link text-white hover-home pp" href="about us.html"><i class="fas fa-info-circle me-2"></i><span class="link-text"  style="text-decoration: 2px solid underline;">About</span></a>
         </li>
         <li class="nav-item animate-services">
-          <a class="nav-link text-white hover-home pp" href="serv.html"><i class="fas fa-concierge-bell me-2"></i><span class="link-text" style="text-decoration: 2px solid underline;">Services</span></a>
+          <a class="nav-link text-white hover-home pp" href="serv.html"><i class="fas fa-concierge-bell me-2"></i><span class="link-text">Services</span></a>
         </li>
         <li class="nav-item animate-contact">
           <a class="nav-link text-white hover-home pp" href="contactus.html"><i class="fas fa-envelope me-2"></i><span class="link-text">Contact</span></a>
@@ -150,24 +430,69 @@ body {
       
     </div>
   </div>
- 
-<video class="fullwidth-video" src="trap - Trim.mp4" autoplay muted loop playsinline></video>
+
+
+
+  <h2>Product Name</h2>
+<a href="chanel.html" class="btn city" aria-label="Close" style="font-weight: bolder;">
+  X
+</a>
+<div class="product-container" style="margin-top: 100px; margin-bottom: 100px;">
+  <div class="image-section">
+    <img id="mainImage" class="main-image" src="ang19.jpg" alt="Main Product Image" style="border: 3px solid black;">
+  </div> 
+
+  <div class="details-section">
   <div id="loader1">
-      <p class="hh34 hh" style="margin-top: 20px;">Gift Packaging Available </p>
+      <p class="hh hh2" style="font-size: 2rem;" > BOOGIE </p>
     </div>
-    <p class="text-center cort" style="font-size: 25px;">Make your purchase truly special with our elegant gift packaging service. Whether it’s for a birthday, anniversary, or just because — we offer beautifully wrapped bags with the option to include a personalized message, ready to delight your loved ones.</p>
-<video class="fullwidth-video" src="masle.mp4" autoplay muted loop playsinline style="margin-top: 50px;"></video>
-  <div id="loader1">
-      <p class="hh34 hh" style="margin-top: 20px;">Handcrafted / Unique Designs </p>
+  <p><strong>Color:</strong>GREY</p>
+
+  <!-- 1) Thumbnails immediately under Available Colors -->
+  <div class="thumbnails mt-3">
+    <img src="ang19.jpg"
+         alt="Image 1"
+         onclick="changeImage(this)"
+         onmouseover="changeImage(this)"
+         class="thumb active">
+    <img src="ang20.avif"
+         alt="Image 2"
+         onclick="changeImage(this)"
+         onmouseover="changeImage(this)"
+         class="thumb">
+  </div>
+
+  <!-- 2) Then the description toggle -->
+  <div class="dropdown shroud" id="descDropdown">
+    <button onclick="toggleDropdown()" class="text-center" style="background-color: #000000; color: #ccc;">Product Description </button>
+    <div class="dropdown-content">
+      <p>This stylish bag is crafted with durable materials, designed for daily use and travel. Lightweight and spacious with modern aesthetic.</p>
     </div>
-     <p class="text-center cort" style="font-size: 25px;">
-    Our bags are meticulously handcrafted by skilled artisans, ensuring each piece reflects exceptional quality and care. With unique designs that blend classic elegance and modern flair, every bag stands out as a true original. Experience the artistry and individuality woven into every stitch, making your accessory truly one-of-a-kind.</p>
-<video class="fullwidth-video" src="shave.mp4" autoplay muted loop playsinline style="margin-top: 50px;"></video>
-  <div id="loader1">
-      <p class="hh34 hh" style="margin-top: 20px;"> Eco-friendly Packaging </p>
-    </div>
-    <p class="text-center cort" style="font-size: 25px;">
-We are committed to protecting the planet by using sustainable, eco-friendly packaging materials for all our products. Our packaging is designed to minimize waste and reduce environmental impact without compromising on style or protection. By choosing us, you’re supporting a greener future, one beautifully wrapped bag at a time.</p>
+  </div>
+
+  <!-- 3) And finally Add to Cart -->
+  <button id="bt3" class="btn add-to-cart mt-3 btn-add" onclick="addToCart()">
+    <i class="fas fa-cart-plus"></i> Add to Cart
+  </button>
+</div>
+</div>
+
+
+  <script>
+    function changeImage(thumbnail) {
+      const mainImage = document.getElementById("mainImage");
+      mainImage.src = thumbnail.src;
+
+      document.querySelectorAll('.thumbnails img').forEach(img => img.classList.remove('active'));
+      thumbnail.classList.add('active');
+    }
+
+    function toggleDropdown() {
+      document.getElementById("descDropdown").classList.toggle("active");
+    }
+  </script>
+
+
 
    
     <div id="cartSidebar" class="cart-sidebar">

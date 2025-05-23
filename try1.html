@@ -1,502 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>- BagBag -</title>
-<link rel="icon" href="jama.png">
-  <!-- Bootstrap CSS & JS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Bags FAQ</title>
+  <link rel="stylesheet" href="styles.css">
 
-</head>
-<style>
-.chanel{
-  font-family:font3;
-  
-}
-@font-face {
-  font-family: font3 ;
-  src: url(Couture.otf);
-}
-.video-wrapper {
-  position: relative;
-  height: 80vh;
-  overflow: hidden;
-}
+  <style>
+  /* Global Styles */
+  body {
+ 
+    background-image: url('ajeeb.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    padding: 0%;
 
-.video-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 2;
-  pointer-events: none;
-  transition: background 0.4s ease;
-}
-
-.video-wrapper:hover::before,
-.video-wrapper.playing::before {
-  background: rgba(0, 0, 0, 0.4); /* Lighter overlay when playing */
-}
-
-.video-hover {
-  position: relative;
-  z-index: 1;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 768px) {
-  .video-wrapper {
-    height: 80vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
-}
-.video-btn {
-  position: absolute;
-  top: 90%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  padding: 10px 20px;
-  background-color: rgba(255,255,255,0.8);
-  border: 2px solid rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.6s ease;
-  border-radius: 10px;
   
-}
-
-.video-btn:hover {
-  background-color: black;
-  color: white;
-   border: 2px solid white;
-}
-@media (max-width :500px){
-  .video-btn {left: 50%; top: 80%;}
-}
-</style>
+  .faq-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .toggle-icon {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .faq-answer {
+    display: none;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  .faq-answer.show {
+    display: block;
+    opacity: 1;
+    max-height: 300px; /* Max height for the transition effect */
+  }
+  
+  .faq-answer p {
+    margin: 0;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .faq-section {
+      padding: 15px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    .faq-item {
+      padding: 10px 0;
+    }
+  
+    .faq-question {
+      font-size: 16px;
+    }
+  }
+</style>  
+</head>
 <body>
-  <!-- jQuery CDN Link (Agar tum use kar rahe ho) -->
+  <section class="faq-section">
+    <h1>Frequently Asked Questions</h1>
 
-<div id="loader">
-  <div class="spinner">
-    <img src="www.jpg" alt="Loading logo">
-  </div>
-</div>
-
-<div id="main-content" style="display: none;">
-  
-  <!-- NAVBAR -->
-  <nav class="navbar fixed-top">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      
-      <!-- Sidebar Toggle Button -->
-      <div class="d-flex align-items-center">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
-          <span class="navbar-toggler-icon chimp"></span>
-        </button>
-        <form class="d-flex search-box d-none d-md-flex" role="search">
-          <div class="input-group input-group-sm">
-            <span class="input-group-text" ><i class="fas fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
-          </div>
-        </form>
+    <div class="faq-item">
+      <div class="faq-question" id="question1">
+        <span>What makes your bags different from others on the market?</span>
+        <span class="toggle-icon">+</span>
       </div>
-  
-      <!-- Centered Brand -->
-      <a class="navbar-brand" href="index.html"><img src="logo-removebg-preview (1).png" alt="" height="50px" width="50px"></a>
-  
-      <!-- Right Icons -->
-      <div class="icon-group">
-        <a href="wish.html" class="hover-pop22" title="Wishlist"><i class="fas fa-heart hover-pop22"></i></a>
-        <a href="sign-in.html" class="hover-pop23" title="Sign In"><i class="fas fa-user hover-pop23"></i></a>
-        <a href="javascript:void(0);" class="hover-pop24" title="Cart" onclick="toggleCart()">
-          <i class="fas fa-shopping-cart hover-pop24"></i>
-        </a>
-        
-      </div>
-    </div>
-  </nav>
-  
-  <!-- Sidebar Offcanvas -->
- <div class="offcanvas offcanvas-start bg-brown text-white-important"
-     tabindex="-1"
-     id="menuOffcanvas"
-     data-bs-backdrop="static"
-     data-bs-keyboard="false">
-
-    <div class="offcanvas-header text-center">
-      <h5 class="offcanvas-title text-center text-align" style="margin-left: 40%; margin-top: 5%;">Menu</h5>
-      <button type="button" class="btn-close btn-close-white tiger" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <form class="sidebar-search mb-3 d-block d-md-none">
-        <div class="input-group input-group-sm">
-          <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
-          <input type="text" class="form-control" placeholder="Search...">
-        </div>
-      </form>
-      <ul class="navbar-nav">
-        <li class="nav-item animate-home">
-          <a href="index.html" class="nav-link text-white hover-products pp"><i class="fas fa-home me-2"></i><span class="link-text">Home</span></a>
-        </li>
-        <li class="nav-item dropdown animate-products">
-          <a 
-            class="nav-link dropdown-toggle text-white hover-products pp d-flex align-items-center" 
-            href="#" 
-            id="productsDropdown" 
-            role="button" 
-            data-bs-toggle="dropdown" 
-            aria-expanded="false"
-          >
-            <i class="fas fa-shopping-bag me-2"></i>
-            <span class="link-text">Products</span>
-          </a>
-          <ul class="dropdown-menu bg-brown border-0 bg-black" aria-labelledby="productsDropdown">
-            <li>    <a class="dropdown-item text-white d-flex align-items-center " href="prada.html"  >
-              PRADA
-            </a></li>
-            <li><a class="dropdown-item text-white" href="chanel.html" style="text-decoration: 2px solid underline;">CHANEL</a></li>
-            <li><a class="dropdown-item text-white" href="lv.html">LOUIS VUITTON</a></li>
-            <li><a class="dropdown-item text-white" href="bv.html" >BOTTEGA VENETA</a></li>
-            <li><a class="dropdown-item text-white" href="hermes.html">HERMES PARIS</a></li>
-          </ul>
-        </li>
-        
-        <li class="nav-item animate-men">
-          <a class="nav-link text-white hover-men pp" href="chanelmen.html"><i class="fas fa-male me-2"></i><span class="link-text">Men's Section</span></a>
-        </li>
-        <li class="nav-item animate-women">
-          <a class="nav-link text-white hover-women pp" href="chanelwomen.html"><i class="fas fa-female me-2"></i><span class="link-text">Women's Section</span></a>
-        </li>
-        <li class="nav-item animate-about">
-          <a class="nav-link text-white hover-home pp" href="about us.html"><i class="fas fa-info-circle me-2"></i><span class="link-text">About</span></a>
-        </li>
-        <li class="nav-item animate-services">
-          <a class="nav-link text-white hover-home pp" href="serv.html"><i class="fas fa-concierge-bell me-2"></i><span class="link-text">Services</span></a>
-        </li>
-        <li class="nav-item animate-contact">
-          <a class="nav-link text-white hover-home pp" href="contactus.html"><i class="fas fa-envelope me-2"></i><span class="link-text">Contact</span></a>
-        </li>
-      </ul>
-      
-      
-      
-    </div>
-  </div>
-  
-
-  <!-- CAROUSEL -->
-<div class="container-fluid px-0" style="margin-top: 80px;">
-  <!-- Carousel starts here -->
-  <div class="carousel slide mt-4" id="demo" data-bs-ride="carousel">
-
-    <!-- Carousel indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-    </div>
-
-    <!-- Carousel inner -->
-    <div class="carousel-inner">
-
-      <!-- Slide 1: Video -->
-      <div class="carousel-item active" data-bs-interval="3000">
-        <!-- Wrap in a ratio container -->
-        <div class="ratio ratio-16x9">
-          <video class="d-block w-100 h-100" muted loop autoplay playsinline>
-            <source src="chanel.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-      </div>
-
-      <!-- Slide 2: Image -->
-      <div class="carousel-item">
-        <!-- Wrap in a ratio container -->
-        <div class="ratio ratio-16x9">
-        <video class="d-block w-100 h-100" muted loop autoplay playsinline>
-            <source src="chanel2.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-
-      <!-- Slide 3: Image -->
-      <div class="carousel-item">
-        <!-- Wrap in a ratio container -->
-        <div class="ratio ratio-16x9">
-          <img src="wjee.png" class="d-block w-100 h-100" alt="Hermès" style="object-fit: cover;" />
-        </div>
-        <div class="carousel-caption">
-          <a href="about us.html" id="bt3" class="btn">Learn More</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Left and Right buttons -->
-    <button
-      type="button"
-      class="carousel-control-prev"
-      data-bs-target="#demo"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button
-      type="button"
-      class="carousel-control-next"
-      data-bs-target="#demo"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</div>
-    <p id="ora">X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
-                    ____________________________________________ X</p>
-    <div id="loader1">
-      <p class="hh">New Arrivals</p>
-    </div>
-    <!-- PRODUCTS -->
-    <div class="container my-4">
-      <div class="row justify-content-center">
-        <!-- CARD 1 -->
-        <div class="col-md-3 mb-4">
-          <div class="card shadow-sm product-card">
-            <div class="product-img-container">
-              <img src="gg2.avif" class="card-img-top product-img main-img" alt="Product">
-              <img src="ex2.avif" class="card-img-top product-img hover-img" alt="Product Hover">
-            </div>
-            <div class="card-body text-center product-info">
-              <h5 style="text-transform: uppercase; font-weight: 900; letter-spacing: 4px;"> Cleo Shoulder</h5>
-              <p>Spacious tote, iconic style.</p>
-              <div class="d-flex justify-content-between align-items-center px-3">
-                <span style="font-weight: 500;">$3500</span>
-                <a href="#" id="bt5" class="btn btn-sm">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- CARD 2 -->
-        <div class="col-md-3 mb-4">
-          <div class="card shadow-sm product-card">
-            <div class="product-img-container">
-              <img src="ex22.avif" class="card-img-top product-img main-img" alt="Product">         
-              <img src="ex11.avif" class="card-img-top product-img hover-img" alt="Product Hover">
-            </div>
-            <div class="card-body text-center product-info">
-              <h5 style="text-transform: uppercase; font-weight: 900; letter-spacing: 4px;"> Galleria Mini</h5>
-              <p>Classic silhouette, timeless elegance.</p>
-              <div class="d-flex justify-content-between align-items-center px-3">
-                <span style="font-weight: 500;">$5500</span>
-                <a href="#" id="bt5" class="btn btn-sm btn-add">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- CARD 3 -->
-        <div class="col-md-3 mb-4">
-          <div class="card shadow-sm product-card">
-            <div class="product-img-container">
-              <img src="rex1.avif" class="card-img-top product-img main-img" alt="Product">
-              <img src="rex2.avif" class="card-img-top product-img hover-img" alt="Product Hover">
-            </div>
-            <div class="card-body text-center product-info">
-              <h5 style="text-transform: uppercase; font-weight: 900; letter-spacing: 4px;"> Mini Hobo</h5>
-              <p>Structured dome, vintage flair.</p>
-              <div class="d-flex justify-content-between align-items-center px-3">
-                <span style="font-weight: 500;">$1000</span>
-                <a href="#" id="bt5" class="btn btn-sm btn-add">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- CARD 4 -->
-        <div class="col-md-3 mb-4">
-          <div class="card shadow-sm product-card">
-            <div class="product-img-container">
-              <img src="big1.avif" class="card-img-top product-img main-img" alt="Product">
-              <img src="big2.avif" class="card-img-top product-img hover-img" alt="Product Hover">
-            </div>
-            <div class="card-body text-center product-info">
-              <h5 style="text-transform: uppercase; font-weight: 900; letter-spacing: 4px;">Nylon Mini</h5>
-              <p>Iconic style , timeless journey.</p>
-              <div class="d-flex justify-content-between align-items-center px-3">
-                <span style="font-weight: 500;">$2000</span>
-                <a href="#" id="bt5" class="btn btn-sm btn-add">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-   <p id="ora">X ____________________________________________ <span> <img src="www.jpg" alt="" height="45px" width="45px"></span>
-                    ____________________________________________ X</p>
-  <div class="container-fluid px-0">
-  <div class="row g-0 position-relative goda">
-    <div class="position-absolute top-50 start-50 translate-middle text-white text-center z-3 " style="pointer-events: none;">
-      <h1 style="font-size: 4rem;  font-weight: 500; font-family: font2;" class="chanel">CHANEL</h1>
-    </div>
-
-    <!-- Video 1 -->
-    <div class="col-12 col-md-6">
-      <div class="video-wrapper">
-        <video class="w-100 h-100 video-hover" muted loop preload="metadata" playsinline poster="wrey.png" style="object-fit: cover;">
-          <source src="cha.mp4" type="video/mp4" />
-        </video>
-        <a class="video-btn btn" href="chanelwomen.html">FOR HER</a>
+      <div class="faq-answer" id="answer1">
+        <p>Our bags are crafted with meticulous attention to detail using the finest materials, offering both elegance and durability. Each bag is a statement of superior craftsmanship.</p>
       </div>
     </div>
 
-    <!-- Video 2 -->
-    <div class="col-12 col-md-6">
-      <div class="video-wrapper">
-        <video class="w-100 h-100 video-hover" muted loop preload="metadata" playsinline poster="kdkd.png" style="object-fit: cover;">
-          <source src="ft1.mp4" type="video/mp4" />
-        </video>
-        <a class="video-btn btn" href="chanelmen.html">FOR HIM</a>
+    <div class="faq-item">
+      <div class="faq-question" id="question2">
+        <span>How long will it take to receive my order?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer2">
+        <p>We offer expedited shipping for a seamless experience. Orders typically ship within 1-2 business days and will arrive at your doorstep in 3-5 days, depending on your location.</p>
       </div>
     </div>
-  </div>
-</div>
-     
-  
 
-  
-
-
-
-
-<div id="cartSidebar" class="cart-sidebar">
-  <div class="cart-header">
-    <button class="close-btn22" onclick="toggleCart()" style="color: #fffafa;">➔</button>
-    <h4 style="margin-right: 75px; margin-top: 20px; color: #fff;">Your Cart</h4>
-  </div>
-  <div class="cart-body">
-    <div class="cart-item">
-      <img src="new1.avif" alt="Product" >
-      <div class="item-info">
-        <p style="font-weight: bolder; color: #fff;" >Louis Vuitton Capucines</p>
-        <div class="quantity-controls">
-          <button onclick="decreaseQty()" style="font-weight: 900;">-</button>
-          <span id="qty" style="font-weight: 500; color: #ffffff;">1</span>
-          <button onclick="increaseQty()" style="font-weight: bold;">+</button>
-        </div>
-        <p  style=" color: #fff;">$<span id="price" style="color: #fff;">5500</span></p>
+    <div class="faq-item">
+      <div class="faq-question" id="question3">
+        <span>Can I personalize my bag?</span>
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer" id="answer3">
+        <p>Absolutely! We offer a variety of customization options, including engraving your initials, custom hardware, and bespoke color combinations. Let us create a one-of-a-kind piece just for you.</p>
       </div>
     </div>
-    <div class="cart-footer" style=" color: #fff;">
-      <p>Total : $<span id="total">5500</span></p>
-      <button class="btn view-cart">View Cart</button>
-      <button class="btn checkout">Checkout</button>
-      <button class="btn continue" onclick="toggleCart()">Continue Shopping</button>
-  
-      <div style="position: relative; display: inline-block; width: 100%; justify-content: center;">
-        <label for="country" style="margin-top: 30px; margin-left: 20%;">Choose your country:</label>
-        <select id="country" name="country" class="form-select text-center custom-select-arrow" style="background-color: #ffffff; color: #000000;">
-          <option value="">-- Select Country --</option>
-          <option value="PA">Pakistan</option>
-          <option value="US">United States</option>
-          <option value="IN">India</option>
-          <option value="GB">United Kingdom</option>
-          <option value="CA">Canada</option>
-          <option value="AU">Australia</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
-          <option value="JP">Japan</option>
-          <option value="CN">China</option>
-          <option value="BR">Brazil</option>
-        </select>
+
+    <div class="faq-item">
+      <div class="faq-question" id="question4">
+        <span>Are your bags sustainable?</span>
+        <span class="toggle-icon">+</span>
       </div>
-      
-
-    </div>
-  </div>
-
-
-<!-- Trigger Button -->
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-
-      <!-- 1) Primary Nav Links -->
-      <div class="footer-segment footer-nav text-center text-md-start mb-3 mb-md-0 d-flex gap-4">
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Service</a>
-        <a href="#">Contact</a>
+      <div class="faq-answer" id="answer4">
+        <p>Yes, we prioritize sustainability by using ethically sourced materials and eco-friendly packaging. We are continuously working towards minimizing our environmental impact.</p>
       </div>
-
-      <!-- Divider -->
-      <div class="footer-divider mx-2"></div>
-
-      <!-- 2) Social Media Handles -->
-      <div class="footer-segment footer-logos d-flex gap-4">
-        <a href="prada.html" class="logo-wrapper" aria-label="Brand 1"><img src="prada-fashion-white-logo-hd-png-701751694773734yaaj1ubzl3-removebg-preview (1).png" alt="Logo 1"></a>
-        <a href="chanel.html" class="logo-wrapper" aria-label="Brand 2"><img src="lets-removebg-preview.png" alt="Logo 2"></a>
-        <a href="#" class="logo-wrapper" aria-label="Brand 3"><img src="yyyy-removebg-preview.png" alt="Logo 3"></a>
-        <a href="#" class="logo-wrapper" aria-label="Brand 4"><img src="bv.png" alt="Logo 4"></a>
-        <a href="#" class="logo-wrapper" aria-label="Brand 5"><img src="lolo-removebg-preview.png" alt="Logo 5"></a>
-      </div>
-
-      <!-- Divider -->
-      <div class="footer-divider mx-2"></div>
-
-      <!-- 3) Five Logos -->
-     <!-- 3) Five Logos (now with links) -->
-
-<div class="footer-segment footer-social d-flex gap-4">
-  <a href="#" class="social-icon fb"    aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-  <a href="#" class="social-icon insta"   aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-  <a href="#" class="social-icon twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-  <a href="#" class="social-icon github"  aria-label="GitHub"><i class="bi bi-github"></i></a>
-  <a href="#" class="social-icon linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-</div>
     </div>
-  </div>
-</footer>
-</div>
-</div>
-<!-- Bootstrap JS + Icons (for social icons) -->
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  rel="stylesheet"
-/>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  </section>
+<script>// Get all the FAQ question elements
+const faqItems = document.querySelectorAll('.faq-item');
 
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.querySelector('.faq-answer');
+  const toggleIcon = item.querySelector('.toggle-icon');
 
+  // Add click event to each question
+  question.addEventListener('click', () => {
+    // Accordion-style behavior (only one FAQ answer is shown at a time)
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        otherItem.querySelector('.faq-answer').classList.remove('show');
+        otherItem.querySelector('.toggle-icon').textContent = '+';
+      }
+    });
 
-<!-- Item Added Toast -->
-<div id="itemAddedToast" class="toast position-fixed bottom-0 end-0 m-4" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 9999; display: none;">
-  <div class="d-flex">
-    <div class="toast-body">
-      ✅ Great choice ! Item added.
-    </div>
-    <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="hideToast()" aria-label="Close"></button>
-  </div>
-</div>
-<!-- JAVA SCRIPT -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-</script>
-<script src="script.js"></script>
-<!-- JAVA SCRIPT -->
+    // Toggle the current answer visibility and icon
+    answer.classList.toggle('show');
+    toggleIcon.textContent = answer.classList.contains('show') ? '-' : '+';
+  });
+});</script>
+  <script src="script.js"></script>
 </body>
 </html>
