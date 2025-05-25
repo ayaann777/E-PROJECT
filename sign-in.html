@@ -395,3 +395,43 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.j
 <!-- JAVA SCRIPT -->
 </body>
 </html>
+
+<script>
+  
+
+
+  const firstNameInput = document.getElementById('firstName');
+  const lastNameInput = document.getElementById('lastName');
+  const registrationForm = document.querySelector('.glass-form form'); // Select the form
+  
+  // Regular expression to check if a string contains any digits (0-9)
+  const hasNumber = /\d/;
+  
+  firstNameInput.addEventListener('input', function() {
+    if (hasNumber.test(this.value)) {
+      this.setCustomValidity('Numbers are not allowed in the first name.');
+    } else {
+      this.setCustomValidity(''); // Clear custom validity message
+    }
+    this.reportValidity(); // Show the validation message
+  });
+  
+  lastNameInput.addEventListener('input', function() {
+    if (hasNumber.test(this.value)) {
+      this.setCustomValidity('Numbers are not allowed in the last name.');
+    } else {
+      this.setCustomValidity(''); // Clear custom validity message
+    }
+    this.reportValidity(); // Show the validation message
+  });
+  
+  // Optional: Prevent form submission if validation fails (even if browser allows)
+  registrationForm.addEventListener('submit', function(event) {
+    if (hasNumber.test(firstNameInput.value) || hasNumber.test(lastNameInput.value)) {
+      event.preventDefault(); // Stop the form from submitting
+      alert('Please correct the name fields. Numbers are not allowed.'); // Or use a more sophisticated error display
+    }
+  });
+  
+  
+  </script>

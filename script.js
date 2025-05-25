@@ -1,4 +1,3 @@
-
   window.addEventListener('load', function () {
     document.getElementById('loader').style.display = 'none';
     const mainContent = document.getElementById('main-content');

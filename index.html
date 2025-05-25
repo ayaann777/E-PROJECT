@@ -34,12 +34,15 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas">
           <span class="navbar-toggler-icon chimp"></span>
         </button>
-        <form class="d-flex search-box d-none d-md-flex" role="search">
+        <form class="d-flex search-box d-none d-md-flex position-relative" role="search">
           <div class="input-group input-group-sm">
-            <span class="input-group-text" ><i class="fas fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search..." aria-label="Search">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" class="form-control" id="brandSearchInput" placeholder="Search..." aria-label="Search" autocomplete="off">
           </div>
+          <div id="brandSearchSuggestions" class="autocomplete-suggestions"></div>
         </form>
+        
+        
       </div>
   
       <!-- Centered Brand -->
@@ -49,9 +52,7 @@
       <div class="icon-group">
         <a href="wish.html" class="hover-pop22" title="Wishlist"><i class="fas fa-heart hover-pop22"></i></a>
         <a href="sign-in.html" class="hover-pop23" title="Sign In"><i class="fas fa-user hover-pop23"></i></a>
-        <a href="javascript:void(0);" class="hover-pop24" title="Cart" onclick="toggleCart()">
-          <i class="fas fa-shopping-cart hover-pop24"></i>
-        </a>
+       
         
       </div>
     </div>
@@ -69,12 +70,15 @@
       <button type="button" class="btn-close btn-close-white tiger" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <form class="sidebar-search mb-3 d-block d-md-none">
+      <form class="sidebar-search mb-3 d-block d-md-none position-relative">
         <div class="input-group input-group-sm">
           <span class="input-group-text bg-white"><i class="fas fa-search text-muted"></i></span>
-          <input type="text" class="form-control" placeholder="Search...">
+          <input type="text" class="form-control" id="sidebarSearchInput" placeholder="Search..." autocomplete="off">
         </div>
+        <div id="sidebarSearchSuggestions" class="autocomplete-suggestions"></div>
       </form>
+      
+      
       <ul class="navbar-nav">
         <li class="nav-item animate-home">
           <a href="index.html" class="nav-link text-white hover-products pp"><i class="fas fa-home me-2"></i><span class="link-text" style="text-decoration: 2px solid underline;">Home</span></a>
@@ -157,7 +161,7 @@
                     <source src="daj2.mp4" type="video/mp4"> 
                 </video>
                 <div class="carousel-caption">
-                    <a href="louis.html" id="bt3" class="btn">Shop Louis Vuitton</a>
+                    <a href="lv.html" id="bt3" class="btn">Shop Louis Vuitton</a>
                 </div>
             </div>
 
@@ -451,6 +455,150 @@
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 </script>
 <script src="script.js"></script>
+<script>
+  // Function to show the loader
+function showLoader() {
+  document.getElementById('loader').style.display = 'flex';
+  document.getElementById('main-content').style.display = 'none';
+}
+
+// Function to hide the loader
+function hideLoader() {
+  document.getElementById('loader').style.display = 'none';
+  document.getElementById('main-content').style.display = 'block';
+}
+
+// Show loader on page load
+window.onload = showLoader;
+
+// Hide loader after a delay (simulating content loading)
+window.addEventListener('load', function() {
+  setTimeout(hideLoader, 1000); // Adjust delay as needed
+});
+
+
+// Cart Sidebar functionality
+function toggleCart() {
+  var cartSidebar = document.getElementById("cartSidebar");
+  cartSidebar.classList.toggle("open");
+}
+
+function increaseQty() {
+  var qtyElement = document.getElementById("qty");
+  var priceElement = document.getElementById("price");
+  var totalElement = document.getElementById("total");
+
+  var currentQty = parseInt(qtyElement.textContent);
+  var unitPrice = 5500; // Assuming initial price is for 1 quantity
+
+  qtyElement.textContent = currentQty + 1;
+  totalElement.textContent = (currentQty + 1) * unitPrice;
+}
+
+function decreaseQty() {
+  var qtyElement = document.getElementById("qty");
+  var priceElement = document.getElementById("price");
+  var totalElement = document.getElementById("total");
+
+  var currentQty = parseInt(qtyElement.textContent);
+  var unitPrice = 5500; // Assuming initial price is for 1 quantity
+
+  if (currentQty > 1) {
+    qtyElement.textContent = currentQty - 1;
+    totalElement.textContent = (currentQty - 1) * unitPrice;
+  }
+}
+
+// Function to show toast message
+function showToast(message) {
+  var toast = document.getElementById("itemAddedToast");
+  var toastBody = toast.querySelector(".toast-body");
+  toastBody.textContent = "✅ " + message;
+  toast.style.display = "block";
+  setTimeout(function() {
+    toast.style.display = "none";
+  }, 3000); // Hide after 3 seconds
+}
+
+function hideToast() {
+  var toast = document.getElementById("itemAddedToast");
+  toast.style.display = "none";
+}
+
+// Live Search Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const brands = [{
+    name: "PRADA",
+    url: "prada.html"
+  }, {
+    name: "CHANEL",
+    url: "chanel.html"
+  }, {
+    name: "LOUIS VUITTON",
+    url: "lv.html"
+  }, {
+    name: "BOTTEGA VENETA",
+    url: "bv.html"
+  }, {
+    name: "HERMÈS PARIS",
+    url: "hermes.html"
+  }, ];
+
+  function setupSearch(inputElementId, suggestionsElementId) {
+    const searchInput = document.getElementById(inputElementId);
+    const suggestionsDiv = document.getElementById(suggestionsElementId);
+
+    if (!searchInput || !suggestionsDiv) {
+      console.error(`Search input or suggestions div not found for IDs: ${inputElementId}, ${suggestionsElementId}`);
+      return;
+    }
+
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      suggestionsDiv.innerHTML = ''; // Clear previous suggestions
+
+      if (query.length > 0) {
+        const filteredBrands = brands.filter(brand =>
+          brand.name.toLowerCase().includes(query)
+        );
+
+        if (filteredBrands.length > 0) {
+          filteredBrands.forEach(brand => {
+            const suggestionItem = document.createElement('div');
+            suggestionItem.classList.add('autocomplete-suggestion-item');
+            suggestionItem.textContent = brand.name;
+            suggestionItem.addEventListener('click', function() {
+              window.location.href = brand.url; // Navigate to brand page
+            });
+            suggestionsDiv.appendChild(suggestionItem);
+          });
+          suggestionsDiv.style.display = 'block'; // Show suggestions
+        } else {
+          suggestionsDiv.style.display = 'none'; // Hide if no matches
+        }
+      } else {
+        suggestionsDiv.style.display = 'none'; // Hide if input is empty
+      }
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!searchInput.contains(event.target) && !suggestionsDiv.contains(event.target)) {
+        suggestionsDiv.style.display = 'none';
+      }
+    });
+  }
+
+  // Setup search for the navbar search box
+  setupSearch('brandSearchInput', 'brandSearchSuggestions');
+
+  // Setup search for the sidebar search box
+  setupSearch('sidebarSearchInput', 'sidebarSearchSuggestions');
+});</script>
+
+
+
+
 <!-- JAVA SCRIPT -->
 </body>
 </html>
