@@ -1365,3 +1365,10 @@ font-size: 15px;
 .sidebar-search {
   position: relative;
 }
+@media (min-width:1300px){
+ .thumbnails img {
+    width: 100px;
+    height: 100px;
+ 
+  }
+}
